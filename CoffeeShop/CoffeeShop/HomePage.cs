@@ -198,7 +198,7 @@ namespace CoffeeShop
                     dataGridView1.Rows.RemoveAt(0);
                 if (quan < 1)
                 {
-                    if (fn.deleteOrder(id, name))
+                    if (fn.deleteOrderItem(id, name))
                     {
                         count--;
                         tb_Amount.Text = (count).ToString();
@@ -337,6 +337,23 @@ namespace CoffeeShop
             bt_Staff.Enabled = false;
             bt_Checking.Enabled = false;
             bt_Income.Enabled = false;
+        }
+
+        private void btguest_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("No item selected!", "Ordering", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                Bill bill = new Bill();
+                bill.id = id;
+                bill.c_phone = "N/A";
+                bill.E_ID = comboBox1.SelectedValue.ToString();
+                bill.Description = tbDes.Text;
+                bill.Show();
+            }
         }
     }
 }

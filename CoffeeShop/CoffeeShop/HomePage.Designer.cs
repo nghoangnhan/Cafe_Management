@@ -48,6 +48,7 @@ namespace CoffeeShop
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_Menu = new System.Windows.Forms.Panel();
+            this.btguest = new System.Windows.Forms.Button();
             this.tbDes = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -57,22 +58,22 @@ namespace CoffeeShop
             this.bt_Reset = new System.Windows.Forms.Button();
             this.bt_Remove = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.orderItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_Amount = new System.Windows.Forms.TextBox();
             this.bt_SCart = new System.Windows.Forms.Button();
             this.tb_Phone = new System.Windows.Forms.TextBox();
             this.pn_Menu_dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_CusName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.orderItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btclose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel_Login.SuspendLayout();
             this.panel_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pn_Menu_dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -263,7 +264,7 @@ namespace CoffeeShop
             this.label3.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 31);
+            this.label3.Size = new System.Drawing.Size(111, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "Password";
             // 
@@ -273,7 +274,7 @@ namespace CoffeeShop
             this.label2.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 31);
+            this.label2.Size = new System.Drawing.Size(99, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Account";
             // 
@@ -283,13 +284,14 @@ namespace CoffeeShop
             this.label1.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(113, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 31);
+            this.label1.Size = new System.Drawing.Size(88, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sign In";
             // 
             // panel_Menu
             // 
             this.panel_Menu.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel_Menu.Controls.Add(this.btguest);
             this.panel_Menu.Controls.Add(this.tbDes);
             this.panel_Menu.Controls.Add(this.label7);
             this.panel_Menu.Controls.Add(this.comboBox1);
@@ -312,6 +314,20 @@ namespace CoffeeShop
             this.panel_Menu.Size = new System.Drawing.Size(946, 578);
             this.panel_Menu.TabIndex = 4;
             this.panel_Menu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Menu_Paint);
+            // 
+            // btguest
+            // 
+            this.btguest.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btguest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btguest.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btguest.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btguest.Location = new System.Drawing.Point(556, 143);
+            this.btguest.Name = "btguest";
+            this.btguest.Size = new System.Drawing.Size(370, 42);
+            this.btguest.TabIndex = 19;
+            this.btguest.Text = "Pay with guest";
+            this.btguest.UseVisualStyleBackColor = false;
+            this.btguest.Click += new System.EventHandler(this.btguest_Click);
             // 
             // tbDes
             // 
@@ -424,10 +440,6 @@ namespace CoffeeShop
             this.dataGridView1.Size = new System.Drawing.Size(370, 298);
             this.dataGridView1.TabIndex = 10;
             // 
-            // orderItemBindingSource
-            // 
-            this.orderItemBindingSource.DataMember = "Order_Item";
-            // 
             // tb_Amount
             // 
             this.tb_Amount.BackColor = System.Drawing.Color.Red;
@@ -472,10 +484,6 @@ namespace CoffeeShop
             this.pn_Menu_dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pn_Menu_dataGridView1_CellContentClick);
             this.pn_Menu_dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pn_Menu_dataGridView1_CellContentDoubleClick);
             // 
-            // itemBindingSource
-            // 
-            this.itemBindingSource.DataMember = "Item";
-            // 
             // tb_CusName
             // 
             this.tb_CusName.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -507,6 +515,14 @@ namespace CoffeeShop
             this.label5.Size = new System.Drawing.Size(177, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "Customer\'s Name:";
+            // 
+            // orderItemBindingSource
+            // 
+            this.orderItemBindingSource.DataMember = "Order_Item";
+            // 
+            // itemBindingSource
+            // 
+            this.itemBindingSource.DataMember = "Item";
             // 
             // btclose
             // 
@@ -545,8 +561,8 @@ namespace CoffeeShop
             this.panel_Menu.ResumeLayout(false);
             this.panel_Menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pn_Menu_dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -566,7 +582,7 @@ namespace CoffeeShop
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel_Menu;
         private System.Windows.Forms.DataGridView pn_Menu_dataGridView1;
-        private System.Windows.Forms.TextBox tb_Phone;
+        public System.Windows.Forms.TextBox tb_Phone;
         private System.Windows.Forms.TextBox tb_CusName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -594,5 +610,6 @@ namespace CoffeeShop
         private System.Windows.Forms.RadioButton rbemployee;
         private System.Windows.Forms.RadioButton rbmanager;
         private System.Windows.Forms.Button btlogout;
+        private System.Windows.Forms.Button btguest;
     }
 }

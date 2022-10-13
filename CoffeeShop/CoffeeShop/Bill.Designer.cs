@@ -36,6 +36,11 @@ namespace CoffeeShop
             this.tb_Cashback = new System.Windows.Forms.TextBox();
             this.bt_Done = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btzalopay = new System.Windows.Forms.Button();
+            this.btmomo = new System.Windows.Forms.Button();
+            this.picboxqr = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxqr)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox_Bill
@@ -47,7 +52,7 @@ namespace CoffeeShop
             this.listBox_Bill.ItemHeight = 25;
             this.listBox_Bill.Location = new System.Drawing.Point(-1, 0);
             this.listBox_Bill.Name = "listBox_Bill";
-            this.listBox_Bill.Size = new System.Drawing.Size(490, 354);
+            this.listBox_Bill.Size = new System.Drawing.Size(403, 354);
             this.listBox_Bill.TabIndex = 1;
             this.listBox_Bill.SelectedIndexChanged += new System.EventHandler(this.listBox_Bill_SelectedIndexChanged);
             // 
@@ -56,7 +61,7 @@ namespace CoffeeShop
             this.tb_cashin.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tb_cashin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_cashin.ForeColor = System.Drawing.SystemColors.Window;
-            this.tb_cashin.Location = new System.Drawing.Point(678, 23);
+            this.tb_cashin.Location = new System.Drawing.Point(591, 7);
             this.tb_cashin.Name = "tb_cashin";
             this.tb_cashin.Size = new System.Drawing.Size(268, 30);
             this.tb_cashin.TabIndex = 2;
@@ -65,7 +70,7 @@ namespace CoffeeShop
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(495, 25);
+            this.label1.Location = new System.Drawing.Point(408, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 28);
             this.label1.TabIndex = 3;
@@ -75,7 +80,7 @@ namespace CoffeeShop
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(495, 85);
+            this.label2.Location = new System.Drawing.Point(408, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(162, 28);
             this.label2.TabIndex = 5;
@@ -87,7 +92,7 @@ namespace CoffeeShop
             this.tb_Cashback.Enabled = false;
             this.tb_Cashback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Cashback.ForeColor = System.Drawing.SystemColors.Window;
-            this.tb_Cashback.Location = new System.Drawing.Point(678, 83);
+            this.tb_Cashback.Location = new System.Drawing.Point(591, 67);
             this.tb_Cashback.Name = "tb_Cashback";
             this.tb_Cashback.Size = new System.Drawing.Size(268, 30);
             this.tb_Cashback.TabIndex = 4;
@@ -97,7 +102,7 @@ namespace CoffeeShop
             this.bt_Done.BackColor = System.Drawing.SystemColors.ControlDark;
             this.bt_Done.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Done.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Done.Location = new System.Drawing.Point(815, 132);
+            this.bt_Done.Location = new System.Drawing.Point(728, 129);
             this.bt_Done.Name = "bt_Done";
             this.bt_Done.Size = new System.Drawing.Size(131, 47);
             this.bt_Done.TabIndex = 6;
@@ -110,7 +115,7 @@ namespace CoffeeShop
             this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(815, 224);
+            this.button1.Location = new System.Drawing.Point(728, 208);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(131, 47);
             this.button1.TabIndex = 7;
@@ -118,12 +123,58 @@ namespace CoffeeShop
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("MS Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1006, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(177, 28);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Or pay with";
+            // 
+            // btzalopay
+            // 
+            this.btzalopay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btzalopay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btzalopay.Location = new System.Drawing.Point(1171, 69);
+            this.btzalopay.Name = "btzalopay";
+            this.btzalopay.Size = new System.Drawing.Size(109, 84);
+            this.btzalopay.TabIndex = 10;
+            this.btzalopay.UseVisualStyleBackColor = true;
+            this.btzalopay.Click += new System.EventHandler(this.btzalopay_Click);
+            // 
+            // btmomo
+            // 
+            this.btmomo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btmomo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmomo.Location = new System.Drawing.Point(926, 67);
+            this.btmomo.Name = "btmomo";
+            this.btmomo.Size = new System.Drawing.Size(109, 84);
+            this.btmomo.TabIndex = 9;
+            this.btmomo.UseVisualStyleBackColor = true;
+            this.btmomo.Click += new System.EventHandler(this.btmomo_Click);
+            // 
+            // picboxqr
+            // 
+            this.picboxqr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picboxqr.Image = global::CoffeeShop.Properties.Resources.zalopay;
+            this.picboxqr.Location = new System.Drawing.Point(926, 222);
+            this.picboxqr.Name = "picboxqr";
+            this.picboxqr.Size = new System.Drawing.Size(354, 329);
+            this.picboxqr.TabIndex = 11;
+            this.picboxqr.TabStop = false;
+            // 
             // Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(958, 357);
+            this.ClientSize = new System.Drawing.Size(1403, 563);
+            this.Controls.Add(this.picboxqr);
+            this.Controls.Add(this.btzalopay);
+            this.Controls.Add(this.btmomo);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bt_Done);
             this.Controls.Add(this.label2);
@@ -137,6 +188,7 @@ namespace CoffeeShop
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bill";
             this.Load += new System.EventHandler(this.Bill_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picboxqr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,5 +203,9 @@ namespace CoffeeShop
         private System.Windows.Forms.TextBox tb_Cashback;
         private System.Windows.Forms.Button bt_Done;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btzalopay;
+        private System.Windows.Forms.Button btmomo;
+        private System.Windows.Forms.PictureBox picboxqr;
     }
 }

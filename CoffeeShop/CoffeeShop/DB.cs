@@ -5,7 +5,7 @@ namespace CoffeeShop
 {
     class DB
     {
-        public SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-7CAKEUV0;Initial Catalog=CafeManager_Test;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        public SqlConnection con = new SqlConnection(@"Data Source=MSI\MSSQLSEVER;Initial Catalog=CafeManager_Test;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public SqlConnection getConnection
         {
             get
