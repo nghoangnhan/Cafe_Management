@@ -83,3 +83,28 @@ D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\bin\Debug\zxing.xml
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\bin\Debug\zxing.presentation.xml
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.ManageEmployee.resources
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.csproj.CopyComplete
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\bin\Debug\CoffeeShop.exe.config
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\bin\Debug\CoffeeShop.exe
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\bin\Debug\CoffeeShop.pdb
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\bin\Debug\zxing.dll
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\bin\Debug\zxing.presentation.dll
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\bin\Debug\zxing.xml
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\bin\Debug\zxing.presentation.xml
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.csproj.AssemblyReference.cache
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.AddManager.resources
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Bill.resources
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.CoffeeShopManage.resources
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Customer.resources
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.ManageEmployee.resources
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.EditItemForm.resources
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Employee.resources
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Find.resources
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.HomePage.resources
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.IncomeForm.resources
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Manager.resources
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Properties.Resources.resources
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.csproj.GenerateResource.cache
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.csproj.CoreCompileInputs.cache
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.csproj.CopyComplete
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.exe
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.pdb

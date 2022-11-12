@@ -76,7 +76,16 @@
     <Compile Include="Customer.Designer.cs">
       <DependentUpon>Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\EmployeeDAO.cs" />
+    <Compile Include="DAO\MY_DB.cs" />
     <Compile Include="DB.cs" />
+    <Compile Include="DTO\Bill.cs" />
+    <Compile Include="DTO\Customer.cs" />
+    <Compile Include="DTO\Employee.cs" />
+    <Compile Include="DTO\Item.cs" />
+    <Compile Include="DTO\Order.cs" />
+    <Compile Include="DTO\Order_Item.cs" />
     <Compile Include="ManageEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,5 +214,6 @@
   <ItemGroup>
     <None Include="Resources\zalopay.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
