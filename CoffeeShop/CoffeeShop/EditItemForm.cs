@@ -13,7 +13,6 @@ namespace CoffeeShop
 {
     public partial class EditItemForm : Form
     {
-        DB mydb = new DB();
         int item_count = 0;
         public EditItemForm()
         {
@@ -21,7 +20,7 @@ namespace CoffeeShop
         }
         void refresh()
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Item", mydb.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Item", DB.Instance.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable tableitem = new DataTable();
             adapter.Fill(tableitem);
@@ -31,7 +30,7 @@ namespace CoffeeShop
         private void EditItemForm_Load(object sender, EventArgs e)
         {
             dataGridView1.ReadOnly = true;
-            SqlCommand command = new SqlCommand("SELECT * FROM Item", mydb.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Item", DB.Instance.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable tableitem = new DataTable();
             adapter.Fill(tableitem);
@@ -48,18 +47,22 @@ namespace CoffeeShop
         }
         public bool updateItem(string id, string name, int price)
         {
-            SqlCommand command = new SqlCommand("UPDATE Item SET It_Name = @name, It_Cost = @price WHERE It_ID = @id", mydb.getConnection);
+            SqlCommand command = new SqlCommand("UPDATE Item SET It_Name = @name, It_Cost = @price WHERE It_ID = @id", DB.Instance.getConnection);
             command.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
             command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
             command.Parameters.Add("@price", SqlDbType.Int).Value = price;
-            mydb.openConnection();
+
+            DB.Instance.openConnection();
             if (command.ExecuteNonQuery() == 1)
             {
-                mydb.closeConnection();
+                DB.Instance.closeConnection();
                 return true;
             }
-            mydb.closeConnection();
-            return false;
+            else
+            {
+                DB.Instance.closeConnection();
+                return false;
+            }
         }
         private void bt_edit_Click(object sender, EventArgs e)
         {
@@ -75,18 +78,22 @@ namespace CoffeeShop
         }
         public bool addItem(string id, string itname, int price)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO Item (It_ID, It_Name, It_Cost) VALUES (@id, @name, @price)", mydb.getConnection);
+            SqlCommand command = new SqlCommand("INSERT INTO Item (It_ID, It_Name, It_Cost) VALUES (@id, @name, @price)", DB.Instance.getConnection);
             command.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
             command.Parameters.Add("@name", SqlDbType.NVarChar).Value = itname;
             command.Parameters.Add("@price", SqlDbType.Int).Value = price;
-            mydb.openConnection();
-            if(command.ExecuteNonQuery() == 1)
+
+            DB.Instance.openConnection();
+            if (command.ExecuteNonQuery() == 1)
             {
-                mydb.closeConnection();
+                DB.Instance.closeConnection();
                 return true;
             }
-            mydb.closeConnection();
-            return false;
+            else
+            {
+                DB.Instance.closeConnection();
+                return false;
+            }
 
         }
         private void bt_add_Click(object sender, EventArgs e)
@@ -104,16 +111,20 @@ namespace CoffeeShop
         }
         public bool deleteItem(string id)
         {
-            SqlCommand command = new SqlCommand("DELETE Item WHERE It_ID = @id", mydb.getConnection);
+            SqlCommand command = new SqlCommand("DELETE Item WHERE It_ID = @id", DB.Instance.getConnection);
             command.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
-            mydb.openConnection();
-            if(command.ExecuteNonQuery() == 1)
+
+            DB.Instance.openConnection();
+            if (command.ExecuteNonQuery() == 1)
             {
-                mydb.closeConnection();
+                DB.Instance.closeConnection();
                 return true;
             }
-            mydb.closeConnection();
-            return false;
+            else
+            {
+                DB.Instance.closeConnection();
+                return false;
+            }
         }
         private void bt_remove_Click(object sender, EventArgs e)
         {

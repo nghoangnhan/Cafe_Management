@@ -38,7 +38,7 @@ namespace CoffeeShop
             {
                 string eid = tbid.Text;
                 int total = 0;
-                SqlCommand com1 = new SqlCommand("SELECT COUNT(DAY_CHECK) AS TOTAL_DAY FROM CHECKING WHERE E_ID= '" + eid + "' AND MONTH_ID=" + dateTimePicker1.Value.Month, mydb.getConnection);
+                SqlCommand com1 = new SqlCommand("SELECT COUNT(DAY_CHECK) AS TOTAL_DAY FROM CHECKING WHERE E_ID= '" + eid + "' AND MONTH_ID=" + dateTimePicker1.Value.Month, DB.Instance.getConnection);
                 SqlDataAdapter adapter = new SqlDataAdapter(com1);
                 DataTable table1 = new DataTable();
                 adapter.Fill(table1);
@@ -54,7 +54,6 @@ namespace CoffeeShop
             }
             bttotalsalary.Text = "Check Salary";
         }
-        DB mydb = new DB();
 
         private void btcheck_Click(object sender, EventArgs e)
         {
@@ -137,20 +136,20 @@ namespace CoffeeShop
         }
         public bool Delete(string E_ID, int DAY_ID, int MONTH_ID)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM CHECKING WHERE E_ID=@eid AND DAY_ID=@dayid AND MONTH_ID=@monthid", mydb.getConnection);
+            SqlCommand command = new SqlCommand("DELETE FROM CHECKING WHERE E_ID=@eid AND DAY_ID=@dayid AND MONTH_ID=@monthid", DB.Instance.getConnection);
             command.Parameters.Add("@eid", SqlDbType.NChar).Value = E_ID;
             command.Parameters.Add("@dayid", SqlDbType.Int).Value = DAY_ID;
             command.Parameters.Add("@monthid", SqlDbType.Int).Value = MONTH_ID;
 
-            mydb.openConnection();
+            DB.Instance.openConnection();
             if (command.ExecuteNonQuery() == 1)
             {
-                mydb.closeConnection();
+                DB.Instance.closeConnection();
                 return true;
             }
             else
             {
-                mydb.closeConnection();
+                DB.Instance.closeConnection();
                 return false;
             }
         }

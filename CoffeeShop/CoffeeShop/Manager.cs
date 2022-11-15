@@ -17,10 +17,10 @@ namespace CoffeeShop
         {
             InitializeComponent();
         }
-        DB mydb = new DB();
+        
         private void Manager_Load(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM EmployeeInfo",mydb.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM EmployeeInfo", DB.Instance.getConnection);
             gridcashier.ReadOnly = true;
             gridcashier.AllowUserToAddRows = false;
             gridcashier.DataSource = st.GetStaff(command);

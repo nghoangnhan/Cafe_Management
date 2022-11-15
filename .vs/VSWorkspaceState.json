@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CoffeeShop",
+    "\\CoffeeShop\\CoffeeShop"
   ],
-  "SelectedNode": "\\D:\\HK1 năm 3\\IT Project\\Cafe_Git",
+  "SelectedNode": "\\CoffeeShop\\CoffeeShop\\HomePage.cs",
   "PreviewInSolutionExplorer": false
 }

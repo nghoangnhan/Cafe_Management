@@ -10,10 +10,9 @@ namespace CoffeeShop
 {
     class Menu_class
     {
-        DB mydb = new DB();
         public DataTable GetMenu(SqlCommand command)
         {
-            command.Connection = mydb.getConnection;
+            command.Connection = DB.Instance.getConnection;
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);

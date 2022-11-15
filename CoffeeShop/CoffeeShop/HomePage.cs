@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using CoffeeShop.DTO;
+using CoffeeShop.DAO;
 namespace CoffeeShop
 {
+    // them addguest vao nut add bill
     public partial class HomePage : Form
     {
-        DB mydb = new DB();
         int id;
         int count = 0;
 
@@ -60,7 +62,7 @@ namespace CoffeeShop
         }
         private DataTable GetItem()
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM ItemInfo", mydb.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM ItemInfo", DB.Instance.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -68,7 +70,7 @@ namespace CoffeeShop
         }
         private DataTable GetOrder()
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Order_ItemInfo", mydb.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Order_ItemInfo", DB.Instance.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -81,7 +83,7 @@ namespace CoffeeShop
             pn_Menu_dataGridView1.AllowUserToAddRows = false;
             pn_Menu_dataGridView1.ReadOnly = true;
             dataGridView1.ReadOnly = true;
-            SqlCommand command = new SqlCommand("SELECT E_ID,E_Name FROM EmployeeInfo WHERE E_Position='Cashier'", mydb.getConnection);
+            SqlCommand command = new SqlCommand("SELECT E_ID,E_Name FROM EmployeeInfo WHERE E_Position='Cashier'", DB.Instance.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -133,7 +135,7 @@ namespace CoffeeShop
 
             SqlCommand command = new SqlCommand("SELECT * FROM Order_ItemInfo WHERE O_Num = " + id);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
-            command.Connection = mydb.getConnection;
+            command.Connection = DB.Instance.getConnection;
             DataTable table1 = new DataTable();
             adapter.Fill(table1);
             if (table1.Rows.Count > 0)
@@ -154,14 +156,18 @@ namespace CoffeeShop
         }
         private void bt_SCart_Click(object sender, EventArgs e)
         {
+            Bill bill = new Bill();
             if (verif())
             {
-                Bill bill = new Bill();
-                bill.id = id;
-                bill.c_phone = tb_Phone.Text;
+                BillForm billform = new BillForm();
+
+                bill.Order_Number = id;
+                bill.C_ID = CustomerDAO.Instance.findCustomerByPhone(tb_Phone.Text).ID;
                 bill.E_ID = comboBox1.SelectedValue.ToString();
                 bill.Description = tbDes.Text;
-                bill.Show();
+
+                billform.bill = bill;
+                billform.Show();
             }
             else
                 MessageBox.Show("Enter Customer Phone", "Ordering", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -215,7 +221,7 @@ namespace CoffeeShop
 
             SqlCommand command = new SqlCommand("SELECT * FROM Order_ItemInfo WHERE O_Num = " + id);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
-            command.Connection = mydb.getConnection;
+            command.Connection = DB.Instance.getConnection;
             DataTable table1 = new DataTable();
             adapter.Fill(table1);
             if (table1.Rows.Count > 0)
@@ -235,7 +241,7 @@ namespace CoffeeShop
             Function fn = new Function();
             if (fn.checkCustomer(tb_Phone.Text) == null)
             {
-                Customer ct = new Customer();
+                CustomerForm ct = new CustomerForm();
                 ct.Show();
             }
             else
@@ -244,13 +250,13 @@ namespace CoffeeShop
 
         private void bt_Signin_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM LO_GIN_Manager WHERE username=@user AND pass_word=@pass", mydb.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM LO_GIN_Manager WHERE username=@user AND pass_word=@pass", DB.Instance.getConnection);
             command.Parameters.Add("@user", SqlDbType.NVarChar).Value = tb_Account.Text;
             command.Parameters.Add("@pass", SqlDbType.NVarChar).Value = tb_Password.Text;
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            SqlCommand command1 = new SqlCommand("SELECT * FROM LO_GIN_Employee WHERE username=@user1 AND pass_word=@pass1", mydb.getConnection);
+            SqlCommand command1 = new SqlCommand("SELECT * FROM LO_GIN_Employee WHERE username=@user1 AND pass_word=@pass1", DB.Instance.getConnection);
             command1.Parameters.Add("@user1", SqlDbType.NVarChar).Value = tb_Account.Text;
             command1.Parameters.Add("@pass1", SqlDbType.NVarChar).Value = tb_Password.Text;
             SqlDataAdapter adapter1 = new SqlDataAdapter(command1);
@@ -302,7 +308,7 @@ namespace CoffeeShop
 
         private void bt_Customer_Click_1(object sender, EventArgs e)
         {
-            Customer ct = new Customer();
+            CustomerForm ct = new CustomerForm();
             ct.Show();
         }
 
@@ -341,19 +347,27 @@ namespace CoffeeShop
 
         private void btguest_Click(object sender, EventArgs e)
         {
+            Bill bill = new Bill();
             if (dataGridView1.Rows.Count == 0)
             {
                 MessageBox.Show("No item selected!", "Ordering", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                Bill bill = new Bill();
-                bill.id = id;
-                bill.c_phone = "N/A";
+                BillForm billform = new BillForm();
+                bill.Order_Number = id;
+                bill.C_ID = CustomerDAO.Instance.findCustomerByPhone(tb_Phone.Text).ID;
                 bill.E_ID = comboBox1.SelectedValue.ToString();
                 bill.Description = tbDes.Text;
-                bill.Show();
+
+                billform.bill = bill;
+                billform.Show();
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

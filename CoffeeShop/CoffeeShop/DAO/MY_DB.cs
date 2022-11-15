@@ -57,7 +57,6 @@ namespace CoffeeShop.DAO
                         }
                     }
                 }
-
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(table);
                 connection.Close();

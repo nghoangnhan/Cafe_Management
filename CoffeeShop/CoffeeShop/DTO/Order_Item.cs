@@ -35,6 +35,5 @@ namespace CoffeeShop.DTO
             this.Name = row["It_Name"].ToString();
             this.Quantity = int.Parse(row["It_Quantity"].ToString());
         }
-
     }
 }

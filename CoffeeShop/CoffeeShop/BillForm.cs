@@ -13,19 +13,19 @@ using ZXing.Common;
 using ZXing.QrCode.Internal;
 using ZXing.Rendering;
 using System.Drawing.Drawing2D;
+using CoffeeShop.DTO;
+using CoffeeShop.DAO;
 
 
 namespace CoffeeShop
 {
-    public partial class Bill : Form
+
+    // Item.checkPrice() chua lam`
+    public partial class BillForm : Form
     {
-        public int id;
-        public string c_phone;
+        public Bill bill;
         int total = 0;
-        DB mydb = new DB();
-        public string E_ID;
-        public string Description;
-        public Bill()
+        public BillForm()
         {
             InitializeComponent();
         }
@@ -37,49 +37,49 @@ namespace CoffeeShop
 
         private void Bill_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            HomePage hp = new HomePage();
-            DateTime bdate = new DateTime();
-            bdate = DateTime.Now;
-            Function fn = new Function();
-
-            listBox_Bill.Show();
-
-            SqlCommand command = new SqlCommand("SELECT * FROM Order_Item WHERE O_Num = " + id);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            command.Connection = mydb.getConnection;
-            DataTable table1 = new DataTable();
-            adapter.Fill(table1);
-            if (table1.Rows.Count > 0)
-                for (int i = 0; i < table1.Rows.Count; i++)
-                {
-                    listBox_Bill.Items.Add(table1.Rows[i]["It_Name"].ToString() + " x " + table1.Rows[i]["It_Quantity"]
-                    + "      = " + (fn.checkPrice(table1.Rows[i]["It_Name"].ToString()) * Convert.ToInt32(table1.Rows[i]["It_Quantity"])));
-                    total += fn.checkPrice(table1.Rows[i]["It_Name"].ToString()) * Convert.ToInt32(table1.Rows[i]["It_Quantity"]);
-                }
-            if (hp.tb_Phone.Text == "")
+            try
             {
-                listBox_Bill.Items.Add("Total: " + total);
-                fn.addGuestBill(id, this.E_ID, c_phone, bdate, total, this.Description);
-            }
-            else
-            {
-                fn.addBill(id, this.E_ID, c_phone, bdate, total, this.Description);
-                int total_2 = fn.discountedTotal(id, bdate);
-                if (total_2 < total)
+                HomePage hp = new HomePage();
+                DateTime bdate = new DateTime();
+                bdate = DateTime.Now;
+                Function fn = new Function();
+
+                listBox_Bill.Show();
+
+                SqlCommand command = new SqlCommand("SELECT * FROM Order_Item WHERE O_Num = " + bill.Order_Number);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                command.Connection = DB.Instance.getConnection;
+                DataTable table1 = new DataTable();
+                adapter.Fill(table1);
+                if (table1.Rows.Count > 0)
+                    for (int i = 0; i < table1.Rows.Count; i++)
+                    {
+                        listBox_Bill.Items.Add(table1.Rows[i]["It_Name"].ToString() + " x " + table1.Rows[i]["It_Quantity"]
+                        + "      = " + (fn.checkPrice(table1.Rows[i]["It_Name"].ToString()) * Convert.ToInt32(table1.Rows[i]["It_Quantity"])));
+                        total += fn.checkPrice(table1.Rows[i]["It_Name"].ToString()) * Convert.ToInt32(table1.Rows[i]["It_Quantity"]);
+                    }
+                if (hp.tb_Phone.Text.Length != 0)
                 {
-                    listBox_Bill.Items.Add("Discount: 10%");
-                    total = total_2;
+                    BillDAO.Instance.addBill(bill.Order_Number, bill.E_ID, bill.C_ID, bdate, total, bill.Description);
+                    int total_discounted = BillDAO.Instance.getBill(bill.Order_Number, bill.Date).Total;
+                    if (total_discounted < total)
+                    {
+                        listBox_Bill.Items.Add("Discount: 10%");
+                        total = total_discounted;
+                    }
                 }
+                else
+                {
+                    listBox_Bill.Items.Add("Total: " + total);
+                    BillDAO.Instance.addBill(bill.Order_Number, bill.E_ID, 10, bdate, total, bill.Description);     // 10: co' the? la` so' khac' (phai? ton` tai.)
+                }
+                listBox_Bill.Items.Add("Cashier: " + bill.E_ID);
+                listBox_Bill.Items.Add("Description: " + bill.Description);
             }
-            listBox_Bill.Items.Add("Cashier: " + this.E_ID);
-            listBox_Bill.Items.Add("Description: " + this.Description);
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-            //}
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
         private void bt_Done_Click(object sender, EventArgs e)

@@ -10,10 +10,9 @@ namespace CoffeeShop
 {
     class Staff
     {
-        DB mydb = new DB();
         public DataTable GetStaff(SqlCommand command)
         {
-            command.Connection = mydb.getConnection;
+            command.Connection = DB.Instance.getConnection;
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -21,21 +20,21 @@ namespace CoffeeShop
         }
         public bool CHECKING(string E_ID, int DAY_ID, int DAY_CHECK, int MONTH_ID)
         {
-            SqlCommand command = new SqlCommand("EXECUTE CHAM @E_id,@DAY_id,@DAY_check,@MONTH_id", mydb.getConnection);
+            SqlCommand command = new SqlCommand("EXECUTE CHAM @E_id,@DAY_id,@DAY_check,@MONTH_id", DB.Instance.getConnection);
             command.Parameters.Add("@E_id", SqlDbType.NVarChar).Value = E_ID;
             command.Parameters.Add("@DAY_id", SqlDbType.Int).Value = DAY_ID;
             command.Parameters.Add("@DAY_check", SqlDbType.Int).Value = DAY_CHECK;
             command.Parameters.Add("@MONTH_id", SqlDbType.Int).Value = MONTH_ID;
 
-            mydb.openConnection();
+            DB.Instance.openConnection();
             if (command.ExecuteNonQuery() == 1)
             {
-                mydb.closeConnection();
+                DB.Instance.closeConnection();
                 return true;
             }
             else
             {
-                mydb.closeConnection();
+                DB.Instance.closeConnection();
                 return false;
             }
         }

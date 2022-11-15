@@ -92,9 +92,7 @@ D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\bin\Debug\zxing.xml
 D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\bin\Debug\zxing.presentation.xml
 D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.csproj.AssemblyReference.cache
 D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.AddManager.resources
-D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Bill.resources
 D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.CoffeeShopManage.resources
-D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Customer.resources
 D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.ManageEmployee.resources
 D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.EditItemForm.resources
 D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Employee.resources
@@ -108,3 +106,5 @@ D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.cspr
 D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.csproj.CopyComplete
 D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.exe
 D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.pdb
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.CustomerForm.resources
+D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.BillForm.resources

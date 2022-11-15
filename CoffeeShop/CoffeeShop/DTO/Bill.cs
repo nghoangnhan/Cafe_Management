@@ -52,7 +52,7 @@ namespace CoffeeShop.DTO
             get => description;
             set => description = value;
         }
-
+        public Bill() { }
         public Bill(DataRow row)
         {
             this.Number = int.Parse(row["B_Num"].ToString());
@@ -62,6 +62,16 @@ namespace CoffeeShop.DTO
             this.Date = (DateTime)(row["B_Date"]);
             this.Total = int.Parse(row["B_Total"].ToString());
             this.Description = row["B_Description"].ToString();
+        }
+        public Bill(int bnum, int ordernum, string eid, int cid, DateTime date, int total, string des)
+        {
+            this.Number = bnum;
+            this.Order_Number = ordernum;
+            this.E_ID = eid;
+            this.C_ID = cid;
+            this.Date = date;
+            this.Total = total;
+            this.Description = des;
         }
     }
 }

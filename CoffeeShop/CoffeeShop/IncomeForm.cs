@@ -13,7 +13,6 @@ namespace CoffeeShop
 {
     public partial class IncomeForm : Form
     {
-        DB mydb = new DB();
         public IncomeForm()
         {
             InitializeComponent();
@@ -24,7 +23,7 @@ namespace CoffeeShop
             DateTime nextday = dateTimePicker1.Value.AddDays(1);
             dateTimePicker1.Value = nextday;
 
-            SqlCommand command = new SqlCommand("SELECT * FROM BILL WHERE B_Date = @bdate", mydb.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM BILL WHERE B_Date = @bdate", DB.Instance.getConnection);
             command.Parameters.Add("@bdate", SqlDbType.Date).Value = (DateTime)dateTimePicker1.Value;
 
             SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -47,7 +46,7 @@ namespace CoffeeShop
             DateTime previousday = dateTimePicker1.Value.AddDays(-1);
             dateTimePicker1.Value = previousday;
 
-            SqlCommand command = new SqlCommand("SELECT * FROM BILL WHERE B_Date = @bdate", mydb.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM BILL WHERE B_Date = @bdate", DB.Instance.getConnection);
             command.Parameters.Add("@bdate", SqlDbType.Date).Value = (DateTime)dateTimePicker1.Value;
 
             SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -66,7 +65,7 @@ namespace CoffeeShop
 
         private void bt_Check_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Bill WHERE DAY(B_Date) = DAY(@bdate) AND MONTH (B_Date) = MONTH (@bdate)", mydb.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Bill WHERE DAY(B_Date) = DAY(@bdate) AND MONTH (B_Date) = MONTH (@bdate)", DB.Instance.getConnection);
             command.Parameters.Add("@bdate", SqlDbType.Date).Value = (DateTime)dateTimePicker1.Value;
 
             SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -87,7 +86,7 @@ namespace CoffeeShop
         private void bt_Checkmonth_Click(object sender, EventArgs e)
         {
             DateTime day = dateTimePicker1.Value;
-            SqlCommand command = new SqlCommand("SELECT * FROM BILL WHERE Month(B_Date) = Month(@bdate)", mydb.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM BILL WHERE Month(B_Date) = Month(@bdate)", DB.Instance.getConnection);
             command.Parameters.Add("@bdate", SqlDbType.Date).Value = (DateTime)dateTimePicker1.Value;
 
 

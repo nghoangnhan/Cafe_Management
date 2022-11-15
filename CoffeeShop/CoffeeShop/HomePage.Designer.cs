@@ -264,7 +264,7 @@ namespace CoffeeShop
             this.label3.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 29);
+            this.label3.Size = new System.Drawing.Size(116, 31);
             this.label3.TabIndex = 2;
             this.label3.Text = "Password";
             // 
@@ -274,7 +274,7 @@ namespace CoffeeShop
             this.label2.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 29);
+            this.label2.Size = new System.Drawing.Size(103, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Account";
             // 
@@ -284,7 +284,7 @@ namespace CoffeeShop
             this.label1.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(113, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 29);
+            this.label1.Size = new System.Drawing.Size(91, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sign In";
             // 
@@ -439,6 +439,7 @@ namespace CoffeeShop
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(370, 298);
             this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tb_Amount
             // 

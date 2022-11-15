@@ -41,6 +41,7 @@ namespace CoffeeShop.DTO
             set => totalPay = value;
         }
 
+        public Customer() { }
         public Customer(DataRow row)
         {
             this.ID = int.Parse(row["C_ID"].ToString());

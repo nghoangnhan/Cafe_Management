@@ -1,7 +1,7 @@
 ﻿
 namespace CoffeeShop
 {
-    partial class Bill
+    partial class BillForm
     {
         /// <summary>
         /// Required designer variable.

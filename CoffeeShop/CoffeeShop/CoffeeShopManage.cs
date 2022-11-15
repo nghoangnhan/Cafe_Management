@@ -20,10 +20,9 @@ namespace CoffeeShop
 
         private void bt_Signin_Click(object sender, EventArgs e)
         {
-            DB db = new DB();
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
-            SqlCommand command = new SqlCommand("SELECT * FROM log_in WHERE username = @User AND password = @Pass", db.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM log_in WHERE username = @User AND password = @Pass", DB.Instance.getConnection);
             command.Parameters.Add("@User", SqlDbType.VarChar).Value = tb_Account.Text;
             command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = tb_Password.Text;
             adapter.SelectCommand = command;

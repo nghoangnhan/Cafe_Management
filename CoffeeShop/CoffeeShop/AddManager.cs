@@ -14,7 +14,6 @@ namespace CoffeeShop
     public partial class AddManager : Form
     {
         Staff staff = new Staff();
-        DB mydb = new DB();
         public AddManager()
         {
             InitializeComponent();
@@ -40,22 +39,22 @@ namespace CoffeeShop
         }
         public bool AddBarista(string ID, string name, string address, int phone, int salary, string position)
         {
-            SqlCommand com = new SqlCommand("EXECUTE Add_Employee @eid, @ename, @eaddr, @ephone, @esalary, @eposition", mydb.getConnection);
+            SqlCommand com = new SqlCommand("EXECUTE Add_Employee @eid, @ename, @eaddr, @ephone, @esalary, @eposition", DB.Instance.getConnection);
             com.Parameters.Add("@eid", SqlDbType.VarChar).Value = ID;
             com.Parameters.Add("@ename", SqlDbType.VarChar).Value = name;
             com.Parameters.Add("@eaddr", SqlDbType.VarChar).Value = address;
             com.Parameters.Add("@ephone", SqlDbType.Int).Value = phone;
             com.Parameters.Add("@esalary", SqlDbType.Int).Value = salary;
             com.Parameters.Add("@eposition", SqlDbType.NVarChar).Value = position;
-            mydb.openConnection();
+            DB.Instance.openConnection();
             if (com.ExecuteNonQuery() == 1)
             {
-                mydb.closeConnection();
+                DB.Instance.closeConnection();
                 return true;
             }
             else
             {
-                mydb.closeConnection();
+                DB.Instance.closeConnection();
                 return false;
             }
         }

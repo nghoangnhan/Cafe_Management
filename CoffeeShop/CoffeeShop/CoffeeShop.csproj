@@ -58,11 +58,11 @@
     <Compile Include="AddManager.Designer.cs">
       <DependentUpon>AddManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bill.cs">
+    <Compile Include="BillForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bill.Designer.cs">
-      <DependentUpon>Bill.cs</DependentUpon>
+    <Compile Include="BillForm.Designer.cs">
+      <DependentUpon>BillForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CoffeeShopManage.cs">
       <SubType>Form</SubType>
@@ -70,13 +70,14 @@
     <Compile Include="CoffeeShopManage.Designer.cs">
       <DependentUpon>CoffeeShopManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer.cs">
+    <Compile Include="CustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer.Designer.cs">
-      <DependentUpon>Customer.cs</DependentUpon>
+    <Compile Include="CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
     <Compile Include="DAO\MY_DB.cs" />
     <Compile Include="DB.cs" />
@@ -136,14 +137,14 @@
     <EmbeddedResource Include="AddManager.resx">
       <DependentUpon>AddManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bill.resx">
-      <DependentUpon>Bill.cs</DependentUpon>
+    <EmbeddedResource Include="BillForm.resx">
+      <DependentUpon>BillForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CoffeeShopManage.resx">
       <DependentUpon>CoffeeShopManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer.resx">
-      <DependentUpon>Customer.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageEmployee.resx">
       <DependentUpon>ManageEmployee.cs</DependentUpon>

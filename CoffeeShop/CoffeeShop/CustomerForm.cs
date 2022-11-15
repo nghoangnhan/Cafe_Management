@@ -11,10 +11,9 @@ using System.Data.SqlClient;
 
 namespace CoffeeShop
 {
-    public partial class Customer : Form
+    public partial class CustomerForm : Form
     {
-        DB mydb = new DB();
-        public Customer()
+        public CustomerForm()
         {
             InitializeComponent();
         }
@@ -22,7 +21,7 @@ namespace CoffeeShop
         private void bt_Search_Click(object sender, EventArgs e)
         {
             string search = tb_Search.Text;
-            SqlCommand command = new SqlCommand("SELECT * FROM Customer WHERE CONCAT (C_ID, C_Name, C_Phone) LIKE '%" + search.ToString() + "%'", mydb.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Customer WHERE CONCAT (C_ID, C_Name, C_Phone) LIKE '%" + search.ToString() + "%'", DB.Instance.getConnection);
             SqlDataAdapter adap = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adap.Fill(table);
@@ -66,7 +65,7 @@ namespace CoffeeShop
             }
             else
                 MessageBox.Show("Phone number has been used", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            SqlCommand command = new SqlCommand("SELECT * FROM CustomerInfo ", mydb.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM CustomerInfo ", DB.Instance.getConnection);
             SqlDataAdapter adap = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adap.Fill(table);
@@ -80,7 +79,7 @@ namespace CoffeeShop
 
         private void Customer_Load(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM CustomerInfo ", mydb.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM CustomerInfo ", DB.Instance.getConnection);
             SqlDataAdapter adap = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adap.Fill(table);
@@ -90,21 +89,22 @@ namespace CoffeeShop
         }
         public bool DeleteCustomer(int ID, string name, string address, string phone, int totalpay)
         {
-            SqlCommand com = new SqlCommand("EXECUTE DeleteCustomer @C_ID,@C_Name,@C_Address,@C_Phone,@C_TotalPay ", mydb.getConnection);
+            SqlCommand com = new SqlCommand("EXECUTE DeleteCustomer @C_ID,@C_Name,@C_Address,@C_Phone,@C_TotalPay ", DB.Instance.getConnection);
             com.Parameters.AddWithValue("@C_ID", ID);
             com.Parameters.AddWithValue("@C_Name", name);
             com.Parameters.AddWithValue("@C_Address", address);
             com.Parameters.AddWithValue("@C_Phone", phone);
             com.Parameters.AddWithValue("@C_TotalPay", totalpay);
-            mydb.openConnection();
+
+            DB.Instance.openConnection();
             if (com.ExecuteNonQuery() == 1)
             {
-                mydb.closeConnection();
+                DB.Instance.closeConnection();
                 return true;
             }
             else
             {
-                mydb.closeConnection();
+                DB.Instance.closeConnection();
                 return false;
             }
         }
@@ -122,7 +122,7 @@ namespace CoffeeShop
             else
             {
                 MessageBox.Show("Deleted", "Delete Customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SqlCommand command = new SqlCommand("SELECT * FROM CustomerInfo ", mydb.getConnection);
+                SqlCommand command = new SqlCommand("SELECT * FROM CustomerInfo ", DB.Instance.getConnection);
                 SqlDataAdapter adap = new SqlDataAdapter(command);
                 DataTable table = new DataTable();
                 adap.Fill(table);
