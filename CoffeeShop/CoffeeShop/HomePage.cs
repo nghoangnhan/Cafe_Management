@@ -301,7 +301,7 @@ namespace CoffeeShop
 
         private void bt_Checking_Click(object sender, EventArgs e)
         {
-            Employee emp = new Employee();
+            EmployeeForm emp = new EmployeeForm();
             emp.homepage = this;
             emp.Show();
         }

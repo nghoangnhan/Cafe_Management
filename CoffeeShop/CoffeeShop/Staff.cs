@@ -26,17 +26,7 @@ namespace CoffeeShop
             command.Parameters.Add("@DAY_check", SqlDbType.Int).Value = DAY_CHECK;
             command.Parameters.Add("@MONTH_id", SqlDbType.Int).Value = MONTH_ID;
 
-            DB.Instance.openConnection();
-            if (command.ExecuteNonQuery() == 1)
-            {
-                DB.Instance.closeConnection();
-                return true;
-            }
-            else
-            {
-                DB.Instance.closeConnection();
-                return false;
-            }
+            return DB.Instance.executeFunction(command);
         }
 
     }

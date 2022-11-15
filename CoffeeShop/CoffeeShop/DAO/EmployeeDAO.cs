@@ -35,17 +35,8 @@ namespace CoffeeShop.DAO
             com.Parameters.Add("@ephone", SqlDbType.NVarChar).Value = phone;
             com.Parameters.Add("@esalary", SqlDbType.Int).Value = salary;
             com.Parameters.Add("@eposition", SqlDbType.NVarChar).Value = position;
-            DB.Instance.openConnection();
-            if (com.ExecuteNonQuery() == 1)
-            {
-                DB.Instance.closeConnection();
-                return true;
-            }
-            else
-            {
-                DB.Instance.closeConnection();
-                return false;
-            }
+
+            return DB.Instance.executeFunction(com);
         }
         public bool editEmployee(string ID, string name, string address, string phone, int salary, string position)
         {
@@ -56,38 +47,21 @@ namespace CoffeeShop.DAO
             com.Parameters.Add("@E_phone", SqlDbType.NVarChar).Value = phone;
             com.Parameters.Add("@E_salary", SqlDbType.Int).Value = salary;
             com.Parameters.Add("@E_position", SqlDbType.NVarChar).Value = position;
-            DB.Instance.openConnection();
-            if (com.ExecuteNonQuery() == 1)
-            {
-                DB.Instance.closeConnection();
-                return true;
-            }
-            else
-            {
-                DB.Instance.closeConnection();
-                return false;
-            }
+
+            return DB.Instance.executeFunction(com);
         }
         public bool dismissEmployee(string ID, string name, string address, string phone, int salary, string position)
         {
-            SqlCommand com = new SqlCommand("EXECUTE Dismiss @E_id, @E_name, @E_addr, @E_phone, @E_salary, @E_position ", DB.Instance.getConnection);
-            com.Parameters.AddWithValue("@E_id", ID);
-            com.Parameters.AddWithValue("@E_name", name);
-            com.Parameters.AddWithValue("@E_addr", address);
-            com.Parameters.AddWithValue("@E_phone", phone);
-            com.Parameters.AddWithValue("@E_salary", salary);
-            com.Parameters.AddWithValue("@E_position", position);
-            DB.Instance.openConnection();
-            if (com.ExecuteNonQuery() == 1)
-            {
-                DB.Instance.closeConnection();
-                return true;
-            }
-            else
-            {
-                DB.Instance.closeConnection();
-                return false;
-            }
+            SqlCommand command = new SqlCommand("EXECUTE Dismiss @E_id, @E_name, @E_addr, @E_phone, @E_salary, @E_position ", DB.Instance.getConnection);
+            command.Parameters.AddWithValue("@E_id", ID);
+            command.Parameters.AddWithValue("@E_name", name);
+            command.Parameters.AddWithValue("@E_addr", address);
+            command.Parameters.AddWithValue("@E_phone", phone);
+            command.Parameters.AddWithValue("@E_salary", salary);
+            command.Parameters.AddWithValue("@E_position", position);
+
+            return DB.Instance.executeFunction(command);
+
         }
 
     }

@@ -12,10 +12,10 @@ using System.Data.SqlClient;
 namespace CoffeeShop
 {
    
-    public partial class Employee : Form
+    public partial class EmployeeForm : Form
     {
         public Form homepage;
-        public Employee()
+        public EmployeeForm()
         {
             InitializeComponent();
         }
