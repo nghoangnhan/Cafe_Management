@@ -20,11 +20,13 @@ using CoffeeShop.DAO;
 namespace CoffeeShop
 {
 
-    // Item.checkPrice() chua lam`
+    // Item.checkPrice() da sua
+    // Bug: Chi add vao C_ID = 10
     public partial class BillForm : Form
     {
         public Bill bill;
         int total = 0;
+        HomePage hp = new HomePage();
         public BillForm()
         {
             InitializeComponent();
@@ -39,7 +41,6 @@ namespace CoffeeShop
         {
             try
             {
-                HomePage hp = new HomePage();
                 DateTime bdate = new DateTime();
                 bdate = DateTime.Now;
                 Function fn = new Function();
@@ -55,10 +56,15 @@ namespace CoffeeShop
                     for (int i = 0; i < table1.Rows.Count; i++)
                     {
                         listBox_Bill.Items.Add(table1.Rows[i]["It_Name"].ToString() + " x " + table1.Rows[i]["It_Quantity"]
-                        + "      = " + (fn.checkPrice(table1.Rows[i]["It_Name"].ToString()) * Convert.ToInt32(table1.Rows[i]["It_Quantity"])));
-                        total += fn.checkPrice(table1.Rows[i]["It_Name"].ToString()) * Convert.ToInt32(table1.Rows[i]["It_Quantity"]);
+                        + "      = " + (BillDAO.Instance.checkPrice(table1.Rows[i]["It_Name"].ToString()) * Convert.ToInt32(table1.Rows[i]["It_Quantity"])));
+                        total += BillDAO.Instance.checkPrice(table1.Rows[i]["It_Name"].ToString()) * Convert.ToInt32(table1.Rows[i]["It_Quantity"]);
                     }
-                if (hp.tb_Phone.Text.Length != 0)
+                if (hp.tb_Phone.Text == "")
+                {
+                    listBox_Bill.Items.Add("Total: " + total);
+                    BillDAO.Instance.addBill(bill.Order_Number, bill.E_ID, 10, bdate, total, bill.Description);     // 10: co' the? la` so' khac' (phai? ton` tai.)
+                }
+                else
                 {
                     BillDAO.Instance.addBill(bill.Order_Number, bill.E_ID, bill.C_ID, bdate, total, bill.Description);
                     int total_discounted = BillDAO.Instance.getBill(bill.Order_Number, bill.Date).Total;
@@ -67,11 +73,6 @@ namespace CoffeeShop
                         listBox_Bill.Items.Add("Discount: 10%");
                         total = total_discounted;
                     }
-                }
-                else
-                {
-                    listBox_Bill.Items.Add("Total: " + total);
-                    BillDAO.Instance.addBill(bill.Order_Number, bill.E_ID, 10, bdate, total, bill.Description);     // 10: co' the? la` so' khac' (phai? ton` tai.)
                 }
                 listBox_Bill.Items.Add("Cashier: " + bill.E_ID);
                 listBox_Bill.Items.Add("Description: " + bill.Description);

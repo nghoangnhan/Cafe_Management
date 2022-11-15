@@ -37,7 +37,27 @@ namespace CoffeeShop.DAO
             
             return customer;
         }
+        public string checkCustomer(string phone)
+        {
+            Function fn = new Function();
+            SqlCommand command = new SqlCommand("EXECUTE checkCustomer @phone", DB.Instance.getConnection);
+            command.Parameters.Add("@phone", SqlDbType.VarChar).Value = phone;
+            DB.Instance.openConnection();
 
+            DataTable table = OrderDAO.Instance.GetOrder(command);
+            if (table.Rows.Count > 0)
+                return table.Rows[0]["C_Name"].ToString();
+            else return null;
+        }
+        public bool addCustomer(string cname, string phone, string address)
+        {
+            SqlCommand command = new SqlCommand("EXECUTE addCustomer @cname, @phone, @address, @totalpay", DB.Instance.getConnection);
+            command.Parameters.Add("@cname", SqlDbType.NVarChar).Value = cname;
+            command.Parameters.Add("@phone", SqlDbType.NVarChar).Value = phone;
+            command.Parameters.Add("@address", SqlDbType.NVarChar).Value = address;
+            command.Parameters.Add("@totalpay", SqlDbType.Int).Value = 0;
+            return DB.Instance.executeFunction(command);
+        }
 
     }
 }

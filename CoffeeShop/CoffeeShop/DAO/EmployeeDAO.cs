@@ -63,6 +63,13 @@ namespace CoffeeShop.DAO
             return DB.Instance.executeFunction(command);
 
         }
-
+        public DataTable GetEmployee(SqlCommand command)
+        {
+            command.Connection = DB.Instance.getConnection;
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
     }
 }

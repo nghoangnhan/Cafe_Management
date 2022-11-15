@@ -327,7 +327,7 @@ namespace CoffeeShop
             this.btguest.TabIndex = 19;
             this.btguest.Text = "Pay with guest";
             this.btguest.UseVisualStyleBackColor = false;
-            this.btguest.Click += new System.EventHandler(this.btguest_Click);
+            //this.btguest.Click += new System.EventHandler(this.btguest_Click);
             // 
             // tbDes
             // 
@@ -439,7 +439,6 @@ namespace CoffeeShop
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(370, 298);
             this.dataGridView1.TabIndex = 10;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tb_Amount
             // 

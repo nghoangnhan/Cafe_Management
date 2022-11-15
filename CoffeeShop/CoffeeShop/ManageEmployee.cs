@@ -8,9 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using CoffeeShop.DAO;
 
 namespace CoffeeShop
 {
+    // Da thay 3 ham add, edit, delete = Instance
     public partial class ManageEmployee : Form
     {
         public ManageEmployee()
@@ -35,7 +37,7 @@ namespace CoffeeShop
             try
             {
                 string id = tbid.Text;
-                if (fn.editEmployee(id, name, address, phone, salary, position))
+                if (EmployeeDAO.Instance.editEmployee(id, name, address, phone, salary, position))
                 {
                     MessageBox.Show("Edited", "Edit", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -55,12 +57,11 @@ namespace CoffeeShop
         {
             Close();
         }
-        Staff st = new Staff();
         private void btfind_Click(object sender, EventArgs e)
         {
             string id = tbid.Text;
             SqlCommand com = new SqlCommand("SELECT * FROM Employees WHERE E_ID = '" + id + "'");
-            DataTable table = st.GetStaff(com);
+            DataTable table = EmployeeDAO.Instance.GetEmployee(com);
             if (table.Rows.Count > 0)
             {
                 tbname.Text = table.Rows[0]["E_Name"].ToString();
@@ -88,7 +89,7 @@ namespace CoffeeShop
             string phone = tbphone.Text;
             int salary = Convert.ToInt32(tbsalary.Text);
             string position = cbposi.Text;
-            if (fn.dismissEmployee(id, name, address, phone, salary, position))
+            if (EmployeeDAO.Instance.dismissEmployee(id, name, address, phone, salary, position))
             {
                 MessageBox.Show("Dismissed", "Dismiss Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -106,7 +107,7 @@ namespace CoffeeShop
             string phone = tbphone.Text;
             int salary = Convert.ToInt32(tbsalary.Text);
             string position = cbposi.Text;
-            if(fn.addEmployee(id,name,address,phone,salary,position))
+            if(EmployeeDAO.Instance.addEmployee(id,name,address,phone,salary,position))
             {
                 MessageBox.Show("Added", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

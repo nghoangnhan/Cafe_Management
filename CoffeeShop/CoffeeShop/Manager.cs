@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using CoffeeShop.DAO;
 
 namespace CoffeeShop
 {
@@ -20,19 +21,17 @@ namespace CoffeeShop
         
         private void Manager_Load(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM EmployeeInfo", DB.Instance.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Employees", DB.Instance.getConnection);
             gridcashier.ReadOnly = true;
             gridcashier.AllowUserToAddRows = false;
-            gridcashier.DataSource = st.GetStaff(command);
+            gridcashier.DataSource = EmployeeDAO.Instance.GetEmployee(command);
         }
-        Staff st = new Staff();
-
         private void btrefresh_Click_1(object sender, EventArgs e)
         {
             SqlCommand command = new SqlCommand(@"SELECT * FROM Employees");
             gridcashier.ReadOnly = true;
             gridcashier.AllowUserToAddRows = false;
-            gridcashier.DataSource = st.GetStaff(command);
+            gridcashier.DataSource = EmployeeDAO.Instance.GetEmployee(command);
         }
 
         private void findStaffToolStripMenuItem_Click(object sender, EventArgs e)

@@ -8,23 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using CoffeeShop.DAO;
 
 namespace CoffeeShop
 {
    
-    public partial class EmployeeForm : Form
+    public partial class CheckingForm : Form
     {
         public Form homepage;
-        public EmployeeForm()
+        public CheckingForm()
         {
             InitializeComponent();
         }
-        Staff st = new Staff();
         private void btfind_Click(object sender, EventArgs e)
         {
             string id = tbid.Text;
             SqlCommand com = new SqlCommand("SELECT * FROM Employees WHERE E_ID = '" + id + "'");
-            DataTable table = st.GetStaff(com);
+            DataTable table = EmployeeDAO.Instance.GetEmployee(com);
             if (table.Rows.Count > 0)
             {
                 tbname.Text = table.Rows[0]["E_Name"].ToString();
@@ -78,7 +78,7 @@ namespace CoffeeShop
                         string eid = tbid.Text;
                         int checkday = count;
                         int monthid = Convert.ToInt32(dayy.Month);
-                        if (st.CHECKING(eid, dayid, checkday, monthid))
+                        if (CheckingDAO.Instance.CHECKING(eid, dayid, checkday, monthid))
                         {
                             MessageBox.Show("Checked!", "Checking", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
@@ -91,7 +91,7 @@ namespace CoffeeShop
                     SqlCommand command = new SqlCommand(@"SELECT E_ID[STAFF ID],DAY_ID[DAY],DAY_CHECK[CHECK],MONTH_ID[MONTH] FROM CHECKING");
                     dataGridView2.ReadOnly = true;
                     dataGridView2.AllowUserToAddRows = false;
-                    dataGridView2.DataSource = st.GetStaff(command);
+                    dataGridView2.DataSource = EmployeeDAO.Instance.GetEmployee(command);
                 }
             }
             else
@@ -109,7 +109,7 @@ namespace CoffeeShop
                     string eid = tbid.Text;
                     int checkday = count;
                     int monthid = Convert.ToInt32(dayy.Month);
-                    if (st.CHECKING(eid, dayid, checkday, monthid))
+                    if (CheckingDAO.Instance.CHECKING(eid, dayid, checkday, monthid))
                     {
                         MessageBox.Show("Checked!", "Checking", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
@@ -122,7 +122,7 @@ namespace CoffeeShop
                 SqlCommand command = new SqlCommand(@"SELECT E_ID[STAFF ID],DAY_ID[DAY],DAY_CHECK[CHECK],MONTH_ID[MONTH] FROM CHECKING");
                 dataGridView2.ReadOnly = true;
                 dataGridView2.AllowUserToAddRows = false;
-                dataGridView2.DataSource = st.GetStaff(command);
+                dataGridView2.DataSource = EmployeeDAO.Instance.GetEmployee(command);
             }
         }
 
@@ -131,27 +131,8 @@ namespace CoffeeShop
             SqlCommand command = new SqlCommand(@"SELECT E_ID[STAFF ID],DAY_ID[DAY],DAY_CHECK[CHECK],MONTH_ID[MONTH] FROM CHECKING");
             dataGridView2.ReadOnly = true;
             dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.DataSource = st.GetStaff(command);
+            dataGridView2.DataSource = EmployeeDAO.Instance.GetEmployee(command);
 
-        }
-        public bool Delete(string E_ID, int DAY_ID, int MONTH_ID)
-        {
-            SqlCommand command = new SqlCommand("DELETE FROM CHECKING WHERE E_ID=@eid AND DAY_ID=@dayid AND MONTH_ID=@monthid", DB.Instance.getConnection);
-            command.Parameters.Add("@eid", SqlDbType.NChar).Value = E_ID;
-            command.Parameters.Add("@dayid", SqlDbType.Int).Value = DAY_ID;
-            command.Parameters.Add("@monthid", SqlDbType.Int).Value = MONTH_ID;
-
-            DB.Instance.openConnection();
-            if (command.ExecuteNonQuery() == 1)
-            {
-                DB.Instance.closeConnection();
-                return true;
-            }
-            else
-            {
-                DB.Instance.closeConnection();
-                return false;
-            }
         }
         private void btdelete_Click_1(object sender, EventArgs e)
         {
@@ -159,7 +140,7 @@ namespace CoffeeShop
             {
                 if (MessageBox.Show("Are you want to delete this cheking?", "Delete Checking", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (Delete(dataGridView2.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(dataGridView2.CurrentRow.Cells[1].Value), Convert.ToInt32(dataGridView2.CurrentRow.Cells[3].Value)))
+                    if (CheckingDAO.Instance.deleteChecking(dataGridView2.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(dataGridView2.CurrentRow.Cells[1].Value), Convert.ToInt32(dataGridView2.CurrentRow.Cells[3].Value)))
                     {
                         MessageBox.Show("Checking Deleted", "Delete Checking", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -176,7 +157,7 @@ namespace CoffeeShop
             SqlCommand command = new SqlCommand(@"SELECT * FROM CHECKING");
             dataGridView2.ReadOnly = true;
             dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.DataSource = st.GetStaff(command);
+            dataGridView2.DataSource = EmployeeDAO.Instance.GetEmployee(command);
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -189,19 +170,17 @@ namespace CoffeeShop
             bttotalsalary.Text = total.ToString()+"VND";
             bttotalsalary.ForeColor = Color.Green;
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            SqlCommand command = new SqlCommand(@"SELECT E_ID[STAFF ID],DAY_ID[DAY],DAY_CHECK[CHECK],MONTH_ID[MONTH] FROM CHECKING");
-            dataGridView2.ReadOnly = true;
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.DataSource = st.GetStaff(command);
-        }
-
         private void button2_Click_1(object sender, EventArgs e)
         {
             Close();           
             homepage.Show();
+        }
+        private void bt_refresh_Click(object sender, EventArgs e)
+        {
+            SqlCommand command = new SqlCommand(@"SELECT E_ID[STAFF ID],DAY_ID[DAY],DAY_CHECK[CHECK],MONTH_ID[MONTH] FROM CHECKING");
+            dataGridView2.ReadOnly = true;
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.DataSource = EmployeeDAO.Instance.GetEmployee(command);
         }
     }
 }

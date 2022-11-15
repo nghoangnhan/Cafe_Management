@@ -1,6 +1,7 @@
-﻿CREATE DATABASE CafeManager_Test
+﻿--Đã xóa View
+CREATE DATABASE CafeManager
 GO
-USE CafeManager_Test
+USE CafeManager
 GO
 
 CREATE TABLE Employees (E_ID nvarchar(15) primary key, E_Name nvarchar(50), E_Address nvarchar(50), E_Phone nvarchar(11), E_Salary int, E_Position nvarchar(10))
@@ -121,38 +122,6 @@ INSERT INTO Customer VALUES(  'Bui Tuan K' 	 , '0141242535' 	 , 'Quan 1' 	 , '85
 
  INSERT INTO LO_GIN_Manager VALUES ('m' , 'm')
  INSERT INTO LO_GIN_Employee VALUES ('e' , 'e');
-
-
- --VIEW
-CREATE VIEW EmployeeInfo
-AS 
-SELECT * From Employees
-GO
---xem khach hang
-CREATE VIEW CustomerInfo
-AS
-SELECT * From Customer
-GO
---xem item
-CREATE VIEW ItemInfo
-AS
-SELECT * From Item
-GO
-SELECT * FROM ItemInfo
---xem orderitem
-CREATE VIEW Order_ItemInfo
-AS
-SELECT * From Order_Item
-GO
- --so luong item quantity
-Create view ItemQuanty
-As
-Select Order_Item.It_Name,Order_Item.It_Quantity
-From Order_Item
-GO
-
-
-
 
  --Employee Management
  --Add Employee

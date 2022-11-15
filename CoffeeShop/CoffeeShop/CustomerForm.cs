@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using CoffeeShop.DAO;
 
 namespace CoffeeShop
 {
@@ -52,20 +53,20 @@ namespace CoffeeShop
 
         private void bt_Create_Click(object sender, EventArgs e)
         {
-            Function fn = new Function();
+            //Function fn = new Function();
             string cname = tb_Cname.Text;
             string phone = tb_Phone.Text;
             string address = tb_Address.Text;
-            if(fn.checkCustomer(phone) == null)
+            if(CustomerDAO.Instance.checkCustomer(phone) == null)
             {
-                if (fn.addCustomer(cname, phone, address))
+                if (CustomerDAO.Instance.addCustomer(cname, phone, address))
                     MessageBox.Show("Success", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Fail", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
                 MessageBox.Show("Phone number has been used", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            SqlCommand command = new SqlCommand("SELECT * FROM CustomerInfo ", DB.Instance.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Customer ", DB.Instance.getConnection);
             SqlDataAdapter adap = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adap.Fill(table);
@@ -79,7 +80,7 @@ namespace CoffeeShop
 
         private void Customer_Load(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM CustomerInfo ", DB.Instance.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Customer ", DB.Instance.getConnection);
             SqlDataAdapter adap = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adap.Fill(table);
@@ -122,7 +123,7 @@ namespace CoffeeShop
             else
             {
                 MessageBox.Show("Deleted", "Delete Customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SqlCommand command = new SqlCommand("SELECT * FROM CustomerInfo ", DB.Instance.getConnection);
+                SqlCommand command = new SqlCommand("SELECT * FROM Customer ", DB.Instance.getConnection);
                 SqlDataAdapter adap = new SqlDataAdapter(command);
                 DataTable table = new DataTable();
                 adap.Fill(table);

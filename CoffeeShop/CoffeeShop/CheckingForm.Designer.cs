@@ -1,7 +1,7 @@
 ﻿
 namespace CoffeeShop
 {
-    partial class EmployeeForm
+    partial class CheckingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -52,7 +52,7 @@ namespace CoffeeShop
             this.btdelete = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_refresh = new System.Windows.Forms.Button();
             this.bttotalsalary = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -66,7 +66,7 @@ namespace CoffeeShop
             this.label1.Location = new System.Drawing.Point(30, 36);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 18);
+            this.label1.Size = new System.Drawing.Size(64, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Your\'s ID";
             // 
@@ -78,7 +78,7 @@ namespace CoffeeShop
             this.label2.Location = new System.Drawing.Point(30, 97);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 18);
+            this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Full Name:";
             // 
@@ -90,7 +90,7 @@ namespace CoffeeShop
             this.label3.Location = new System.Drawing.Point(30, 173);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 18);
+            this.label3.Size = new System.Drawing.Size(49, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Phone:";
             // 
@@ -101,7 +101,7 @@ namespace CoffeeShop
             this.label4.Location = new System.Drawing.Point(30, 255);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 18);
+            this.label4.Size = new System.Drawing.Size(58, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Address:";
             // 
@@ -112,7 +112,7 @@ namespace CoffeeShop
             this.label5.Location = new System.Drawing.Point(30, 351);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 18);
+            this.label5.Size = new System.Drawing.Size(83, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "Basic Salary:";
             // 
@@ -123,7 +123,7 @@ namespace CoffeeShop
             this.label6.Location = new System.Drawing.Point(30, 423);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 18);
+            this.label6.Size = new System.Drawing.Size(61, 17);
             this.label6.TabIndex = 5;
             this.label6.Text = "Position:";
             // 
@@ -221,7 +221,7 @@ namespace CoffeeShop
             this.label7.Location = new System.Drawing.Point(398, 253);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(179, 18);
+            this.label7.Size = new System.Drawing.Size(162, 17);
             this.label7.TabIndex = 13;
             this.label7.Text = "Number of checking days:";
             // 
@@ -233,7 +233,7 @@ namespace CoffeeShop
             this.lb.Location = new System.Drawing.Point(398, 498);
             this.lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb.Name = "lb";
-            this.lb.Size = new System.Drawing.Size(76, 18);
+            this.lb.Size = new System.Drawing.Size(70, 17);
             this.lb.TabIndex = 17;
             this.lb.Text = "Total day:";
             // 
@@ -244,7 +244,7 @@ namespace CoffeeShop
             this.lbtotal.Location = new System.Drawing.Point(524, 498);
             this.lbtotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbtotal.Name = "lbtotal";
-            this.lbtotal.Size = new System.Drawing.Size(18, 18);
+            this.lbtotal.Size = new System.Drawing.Size(17, 17);
             this.lbtotal.TabIndex = 18;
             this.lbtotal.Text = "0";
             // 
@@ -270,7 +270,7 @@ namespace CoffeeShop
             this.label9.Location = new System.Drawing.Point(458, 39);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 18);
+            this.label9.Size = new System.Drawing.Size(35, 17);
             this.label9.TabIndex = 20;
             this.label9.Text = "Day:";
             // 
@@ -280,7 +280,7 @@ namespace CoffeeShop
             this.lbday.Location = new System.Drawing.Point(642, 36);
             this.lbday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbday.Name = "lbday";
-            this.lbday.Size = new System.Drawing.Size(0, 18);
+            this.lbday.Size = new System.Drawing.Size(0, 17);
             this.lbday.TabIndex = 21;
             // 
             // checkedListBox1
@@ -366,20 +366,20 @@ namespace CoffeeShop
             this.dataGridView2.Size = new System.Drawing.Size(478, 455);
             this.dataGridView2.TabIndex = 27;
             // 
-            // button1
+            // bt_refresh
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(978, 500);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 36);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.bt_refresh.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.bt_refresh.FlatAppearance.BorderSize = 0;
+            this.bt_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_refresh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bt_refresh.Location = new System.Drawing.Point(978, 500);
+            this.bt_refresh.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.bt_refresh.Name = "bt_refresh";
+            this.bt_refresh.Size = new System.Drawing.Size(90, 36);
+            this.bt_refresh.TabIndex = 28;
+            this.bt_refresh.Text = "Refresh";
+            this.bt_refresh.UseVisualStyleBackColor = false;
+            this.bt_refresh.Click += new System.EventHandler(this.bt_refresh_Click);
             // 
             // bttotalsalary
             // 
@@ -412,7 +412,7 @@ namespace CoffeeShop
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // Employee
+            // CheckingForm
             // 
             this.AcceptButton = this.btfind;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -421,7 +421,7 @@ namespace CoffeeShop
             this.ClientSize = new System.Drawing.Size(1260, 601);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.bttotalsalary);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bt_refresh);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btdelete);
@@ -448,7 +448,7 @@ namespace CoffeeShop
             this.Font = new System.Drawing.Font("MV Boli", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.Name = "Employee";
+            this.Name = "CheckingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee";
             this.Load += new System.EventHandler(this.Employee_Load);
@@ -483,7 +483,7 @@ namespace CoffeeShop
         private System.Windows.Forms.Button btdelete;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_refresh;
         private System.Windows.Forms.Button bttotalsalary;
         private System.Windows.Forms.Button button2;
     }

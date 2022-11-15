@@ -75,5 +75,17 @@ namespace CoffeeShop.DAO
 
             return DB.Instance.executeFunction(command);
         }
+        public int checkPrice(string name)
+        {
+            Function fn = new Function();
+            SqlCommand command = new SqlCommand("SELECT dbo.CheckPrice(@itemname)", DB.Instance.getConnection);
+            command.Parameters.Add("@itemname", SqlDbType.VarChar).Value = name;
+            DB.Instance.openConnection();
+
+            DataTable table = OrderDAO.Instance.GetOrder(command);
+            if (table.Rows.Count > 0)
+                return Convert.ToInt32(table.Rows[0][0]);
+            return 0;
+        }
     }
 }

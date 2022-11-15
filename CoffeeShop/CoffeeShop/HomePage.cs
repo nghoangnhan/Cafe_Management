@@ -62,7 +62,7 @@ namespace CoffeeShop
         }
         private DataTable GetItem()
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM ItemInfo", DB.Instance.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Item", DB.Instance.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -70,7 +70,7 @@ namespace CoffeeShop
         }
         private DataTable GetOrder()
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Order_ItemInfo", DB.Instance.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Order_Item", DB.Instance.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -83,7 +83,7 @@ namespace CoffeeShop
             pn_Menu_dataGridView1.AllowUserToAddRows = false;
             pn_Menu_dataGridView1.ReadOnly = true;
             dataGridView1.ReadOnly = true;
-            SqlCommand command = new SqlCommand("SELECT E_ID,E_Name FROM EmployeeInfo WHERE E_Position='Cashier'", DB.Instance.getConnection);
+            SqlCommand command = new SqlCommand("SELECT E_ID,E_Name FROM Employees WHERE E_Position='Cashier'", DB.Instance.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -111,11 +111,11 @@ namespace CoffeeShop
             string name = pn_Menu_dataGridView1.CurrentRow.Cells[1].Value.ToString();
             int num;
             SqlCommand com = new SqlCommand("SELECT * FROM _Order ");
-            DataTable table = fn.GetOrder(com);
+            DataTable table = OrderDAO.Instance.GetOrder(com);
             num = Convert.ToInt32(table.Rows[table.Rows.Count - 1]["O_Num"]);
 
-            SqlCommand com1 = new SqlCommand("SELECT * FROM Order_ItemInfo WHERE O_Num = " + num);
-            DataTable table_Item = fn.GetOrder(com1);
+            SqlCommand com1 = new SqlCommand("SELECT * FROM Order_Item WHERE O_Num = " + num);
+            DataTable table_Item = OrderDAO.Instance.GetOrder(com1);
 
             count++;
             tb_Amount.Text = (count).ToString();
@@ -128,12 +128,12 @@ namespace CoffeeShop
                 {
                     num++;
                 }
-                fn.AddOrder(num);
+                OrderDAO.Instance.AddOrder(num);
             }
-            fn.AddOrder_Item(num, name, 1);
+            Order_ItemDAO.Instance.AddOrder_Item(num, name, 1);
             id = num;
 
-            SqlCommand command = new SqlCommand("SELECT * FROM Order_ItemInfo WHERE O_Num = " + id);
+            SqlCommand command = new SqlCommand("SELECT * FROM Order_Item WHERE O_Num = " + id);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             command.Connection = DB.Instance.getConnection;
             DataTable table1 = new DataTable();
@@ -169,9 +169,24 @@ namespace CoffeeShop
                 billform.bill = bill;
                 billform.Show();
             }
-            else
-                MessageBox.Show("Enter Customer Phone", "Ordering", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            
+            else if (tb_Phone.Text == "" && tb_CusName.Text == "")
+            {
+                if (dataGridView1.Rows.Count == 0)
+                {
+                    MessageBox.Show("No item selected!", "Ordering", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    BillForm billform = new BillForm();
+                    bill.Order_Number = id;
+                    bill.C_ID = 10;
+                    bill.E_ID = comboBox1.SelectedValue.ToString();
+                    bill.Description = tbDes.Text;
+
+                    billform.bill = bill;
+                    billform.Show();
+                }
+            }
         }
         private void bt_Reset_Click(object sender, EventArgs e)
         {
@@ -181,7 +196,7 @@ namespace CoffeeShop
             tbDes.Clear();
             Function fn = new Function();
             SqlCommand com = new SqlCommand("SELECT * FROM _Order ");
-            DataTable table = fn.GetOrder(com);
+            DataTable table = OrderDAO.Instance.GetOrder(com);
             int num = Convert.ToInt32(table.Rows[table.Rows.Count - 1]["O_Num"]);
             fn.delete_Bill(num);
         }
@@ -204,7 +219,7 @@ namespace CoffeeShop
                     dataGridView1.Rows.RemoveAt(0);
                 if (quan < 1)
                 {
-                    if (fn.deleteOrderItem(id, name))
+                    if (Order_ItemDAO.Instance.deleteOrderItem(id, name))
                     {
                         count--;
                         tb_Amount.Text = (count).ToString();
@@ -212,14 +227,14 @@ namespace CoffeeShop
                 }
                 else
                 {
-                    fn.updateOrder(id, name, quan);
+                    OrderDAO.Instance.updateOrder(id, name, quan);
                     count--;
                     tb_Amount.Text = (count).ToString();
                 }
             }
 
 
-            SqlCommand command = new SqlCommand("SELECT * FROM Order_ItemInfo WHERE O_Num = " + id);
+            SqlCommand command = new SqlCommand("SELECT * FROM Order_Item WHERE O_Num = " + id);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             command.Connection = DB.Instance.getConnection;
             DataTable table1 = new DataTable();
@@ -239,13 +254,16 @@ namespace CoffeeShop
         private void bt_Find_Click(object sender, EventArgs e)
         {
             Function fn = new Function();
-            if (fn.checkCustomer(tb_Phone.Text) == null)
+            if (CustomerDAO.Instance.checkCustomer(tb_Phone.Text) == null)
             {
                 CustomerForm ct = new CustomerForm();
                 ct.Show();
             }
             else
-                tb_CusName.Text = fn.checkCustomer(tb_Phone.Text);
+            {
+                tb_CusName.Text = CustomerDAO.Instance.checkCustomer(tb_Phone.Text);
+            }
+
         }
 
         private void bt_Signin_Click(object sender, EventArgs e)
@@ -301,7 +319,7 @@ namespace CoffeeShop
 
         private void bt_Checking_Click(object sender, EventArgs e)
         {
-            EmployeeForm emp = new EmployeeForm();
+            CheckingForm emp = new CheckingForm();
             emp.homepage = this;
             emp.Show();
         }
@@ -343,31 +361,6 @@ namespace CoffeeShop
             bt_Staff.Enabled = false;
             bt_Checking.Enabled = false;
             bt_Income.Enabled = false;
-        }
-
-        private void btguest_Click(object sender, EventArgs e)
-        {
-            Bill bill = new Bill();
-            if (dataGridView1.Rows.Count == 0)
-            {
-                MessageBox.Show("No item selected!", "Ordering", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                BillForm billform = new BillForm();
-                bill.Order_Number = id;
-                bill.C_ID = CustomerDAO.Instance.findCustomerByPhone(tb_Phone.Text).ID;
-                bill.E_ID = comboBox1.SelectedValue.ToString();
-                bill.Description = tbDes.Text;
-
-                billform.bill = bill;
-                billform.Show();
-            }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

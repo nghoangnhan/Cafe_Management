@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using CoffeeShop.DAO;
 
 namespace CoffeeShop
 {
@@ -22,8 +23,6 @@ namespace CoffeeShop
         {
 
         }
-
-        Staff st = new Staff();
         private void btfind_Click(object sender, EventArgs e)
         {
             
@@ -38,7 +37,7 @@ namespace CoffeeShop
         {
             string id = tbid.Text;
             SqlCommand com = new SqlCommand("SELECT * FROM Employees WHERE E_ID = '" + id + "'");
-            DataTable table = st.GetStaff(com);
+            DataTable table = EmployeeDAO.Instance.GetEmployee(com);
             if (table.Rows.Count > 0)
             {
                 tbname.Text = table.Rows[0]["E_Name"].ToString();

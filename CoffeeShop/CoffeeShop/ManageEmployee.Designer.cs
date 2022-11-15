@@ -255,7 +255,7 @@ namespace CoffeeShop
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ManageEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Edit";
+            this.Text = "ManageEmployee";
             this.Load += new System.EventHandler(this.Edit_Load);
             this.pnwaiter.ResumeLayout(false);
             this.pnwaiter.PerformLayout();
