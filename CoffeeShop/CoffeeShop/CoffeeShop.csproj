@@ -64,18 +64,13 @@
     <Compile Include="BillForm.Designer.cs">
       <DependentUpon>BillForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CoffeeShopManage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CoffeeShopManage.Designer.cs">
-      <DependentUpon>CoffeeShopManage.cs</DependentUpon>
-    </Compile>
     <Compile Include="CustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomerForm.Designer.cs">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\CheckingDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
@@ -85,6 +80,7 @@
     <Compile Include="DAO\OrderDAO.cs" />
     <Compile Include="DAO\Order_ItemDAO.cs" />
     <Compile Include="DB.cs" />
+    <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\Checking.cs" />
     <Compile Include="DTO\Customer.cs" />
@@ -110,13 +106,6 @@
     <Compile Include="CheckingForm.Designer.cs">
       <DependentUpon>CheckingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Find.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Find.Designer.cs">
-      <DependentUpon>Find.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Function.cs" />
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,7 +124,6 @@
     <Compile Include="Manager.Designer.cs">
       <DependentUpon>Manager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu_class.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddManager.resx">
@@ -143,9 +131,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BillForm.resx">
       <DependentUpon>BillForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CoffeeShopManage.resx">
-      <DependentUpon>CoffeeShopManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
@@ -158,9 +143,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CheckingForm.resx">
       <DependentUpon>CheckingForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Find.resx">
-      <DependentUpon>Find.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>

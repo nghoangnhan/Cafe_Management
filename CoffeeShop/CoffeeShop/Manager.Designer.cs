@@ -32,7 +32,6 @@ namespace CoffeeShop
             this.btrefresh = new System.Windows.Forms.Button();
             this.gridcashier = new System.Windows.Forms.DataGridView();
             this.Manage_Toolstrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.findStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.goBackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -75,15 +74,6 @@ namespace CoffeeShop
             this.Manage_Toolstrip.Text = "Manage Employee";
             this.Manage_Toolstrip.Click += new System.EventHandler(this.Manage_Toolstrip_Click);
             // 
-            // findStaffToolStripMenuItem
-            // 
-            this.findStaffToolStripMenuItem.Font = new System.Drawing.Font("MV Boli", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findStaffToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.findStaffToolStripMenuItem.Name = "findStaffToolStripMenuItem";
-            this.findStaffToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
-            this.findStaffToolStripMenuItem.Text = "Find Staff";
-            this.findStaffToolStripMenuItem.Click += new System.EventHandler(this.findStaffToolStripMenuItem_Click);
-            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Font = new System.Drawing.Font("MV Boli", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,7 +98,6 @@ namespace CoffeeShop
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Manage_Toolstrip,
-            this.findStaffToolStripMenuItem,
             this.toolStripMenuItem1,
             this.goBackToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -143,7 +132,6 @@ namespace CoffeeShop
         private System.Windows.Forms.Button btrefresh;
         private System.Windows.Forms.DataGridView gridcashier;
         private System.Windows.Forms.ToolStripMenuItem Manage_Toolstrip;
-        private System.Windows.Forms.ToolStripMenuItem findStaffToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem goBackToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;

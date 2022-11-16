@@ -34,13 +34,6 @@ namespace CoffeeShop
             gridcashier.DataSource = EmployeeDAO.Instance.GetEmployee(command);
         }
 
-        private void findStaffToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Find f = new Find();
-            f.Show();
-
-        }
-
         private void goBackToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();

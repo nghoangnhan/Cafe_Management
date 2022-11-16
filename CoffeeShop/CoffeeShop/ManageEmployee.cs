@@ -24,7 +24,6 @@ namespace CoffeeShop
         {
 
         }
-        Function fn=new Function();
 
         private void btedit_Click_1(object sender, EventArgs e)
         {

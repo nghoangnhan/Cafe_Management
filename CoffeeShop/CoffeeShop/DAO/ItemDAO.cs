@@ -49,5 +49,13 @@ namespace CoffeeShop.DAO
 
             return DB.Instance.executeFunction(command);
         }
+        public DataTable getAllItem()
+        {
+            SqlCommand command = new SqlCommand("SELECT * FROM Item", DB.Instance.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
     }
 }

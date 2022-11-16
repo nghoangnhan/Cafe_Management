@@ -598,15 +598,11 @@ namespace CoffeeShop
         private System.Windows.Forms.Button btclose;
         private System.Windows.Forms.BindingSource itemBindingSource;
         private System.Windows.Forms.BindingSource orderItemBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itCostDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox tbDes;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itNameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.RadioButton rbemployee;
         private System.Windows.Forms.RadioButton rbmanager;
         private System.Windows.Forms.Button btlogout;

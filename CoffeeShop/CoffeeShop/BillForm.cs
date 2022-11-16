@@ -26,7 +26,6 @@ namespace CoffeeShop
     {
         public Bill bill;
         int total = 0;
-        HomePage hp = new HomePage();
         public BillForm()
         {
             InitializeComponent();
@@ -43,7 +42,6 @@ namespace CoffeeShop
             {
                 DateTime bdate = new DateTime();
                 bdate = DateTime.Now;
-                Function fn = new Function();
 
                 listBox_Bill.Show();
 
@@ -59,7 +57,7 @@ namespace CoffeeShop
                         + "      = " + (BillDAO.Instance.checkPrice(table1.Rows[i]["It_Name"].ToString()) * Convert.ToInt32(table1.Rows[i]["It_Quantity"])));
                         total += BillDAO.Instance.checkPrice(table1.Rows[i]["It_Name"].ToString()) * Convert.ToInt32(table1.Rows[i]["It_Quantity"]);
                     }
-                if (hp.tb_Phone.Text == "")
+                if (bill.C_ID == 10)
                 {
                     listBox_Bill.Items.Add("Total: " + total);
                     BillDAO.Instance.addBill(bill.Order_Number, bill.E_ID, 10, bdate, total, bill.Description);     // 10: co' the? la` so' khac' (phai? ton` tai.)
@@ -67,11 +65,12 @@ namespace CoffeeShop
                 else
                 {
                     BillDAO.Instance.addBill(bill.Order_Number, bill.E_ID, bill.C_ID, bdate, total, bill.Description);
-                    int total_discounted = BillDAO.Instance.getBill(bill.Order_Number, bill.Date).Total;
+                    int total_discounted = BillDAO.Instance.getBill(bill.Order_Number, bdate).Total;
                     if (total_discounted < total)
                     {
                         listBox_Bill.Items.Add("Discount: 10%");
                         total = total_discounted;
+                        listBox_Bill.Items.Add("Discounted Total: " + total);
                     }
                 }
                 listBox_Bill.Items.Add("Cashier: " + bill.E_ID);

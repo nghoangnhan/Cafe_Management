@@ -107,7 +107,7 @@ namespace CoffeeShop
 
         private void IncomeForm_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.ReadOnly = true;
         }
 
         private void btclose_Click(object sender, EventArgs e)
@@ -115,6 +115,11 @@ namespace CoffeeShop
             Close();
             HomePage hp = new HomePage();
             hp.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

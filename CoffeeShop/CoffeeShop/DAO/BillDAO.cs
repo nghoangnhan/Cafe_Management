@@ -37,7 +37,7 @@ namespace CoffeeShop.DAO
         public Bill getBill(int ordernum, DateTime date)
         {
             
-            SqlCommand command = new SqlCommand("SELECT B_Total FROM Bill WHERE O_Num = @ordernum AND B_Date = @bdate", DB.Instance.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Bill WHERE O_Num = @ordernum AND B_Date = @bdate", DB.Instance.getConnection);
             command.Parameters.Add("@ordernum", SqlDbType.Int).Value = ordernum;
             command.Parameters.Add("@bdate", SqlDbType.DateTime).Value = date;
 
@@ -77,7 +77,6 @@ namespace CoffeeShop.DAO
         }
         public int checkPrice(string name)
         {
-            Function fn = new Function();
             SqlCommand command = new SqlCommand("SELECT dbo.CheckPrice(@itemname)", DB.Instance.getConnection);
             command.Parameters.Add("@itemname", SqlDbType.VarChar).Value = name;
             DB.Instance.openConnection();

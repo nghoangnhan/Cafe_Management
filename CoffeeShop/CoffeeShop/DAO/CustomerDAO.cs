@@ -39,7 +39,6 @@ namespace CoffeeShop.DAO
         }
         public string checkCustomer(string phone)
         {
-            Function fn = new Function();
             SqlCommand command = new SqlCommand("EXECUTE checkCustomer @phone", DB.Instance.getConnection);
             command.Parameters.Add("@phone", SqlDbType.VarChar).Value = phone;
             DB.Instance.openConnection();
