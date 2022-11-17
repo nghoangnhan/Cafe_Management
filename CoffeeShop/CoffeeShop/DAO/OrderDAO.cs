@@ -55,5 +55,14 @@ namespace CoffeeShop.DAO
 
             return DB.Instance.executeFunction(command);
         }
+        public int countOrder()
+        {
+            SqlCommand command = new SqlCommand("SELECT * FROM _Order", DB.Instance.getConnection);
+
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table.Rows.Count;
+        }
     }
 }

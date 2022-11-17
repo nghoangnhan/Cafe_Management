@@ -22,14 +22,9 @@ namespace CoffeeShop
         private void bt_Search_Click(object sender, EventArgs e)
         {
             string search = tb_Search.Text;
-            SqlCommand command = new SqlCommand("SELECT * FROM Customer WHERE CONCAT (C_ID, C_Name, C_Phone) LIKE '%" + search.ToString() + "%'", DB.Instance.getConnection);
-            SqlDataAdapter adap = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adap.Fill(table);
+            DataTable table = CustomerDAO.Instance.searchCustomer(search);
             if(table.Rows.Count > 0)
-            {
                 dataGridView1.DataSource = table;
-            }
         }
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -53,7 +48,6 @@ namespace CoffeeShop
 
         private void bt_Create_Click(object sender, EventArgs e)
         {
-            //Function fn = new Function();
             string cname = tb_Cname.Text;
             string phone = tb_Phone.Text;
             string address = tb_Address.Text;
@@ -66,13 +60,11 @@ namespace CoffeeShop
             }
             else
                 MessageBox.Show("Phone number has been used", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            SqlCommand command = new SqlCommand("SELECT * FROM Customer ", DB.Instance.getConnection);
-            SqlDataAdapter adap = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adap.Fill(table);
-            dataGridView1.DataSource = table;
-        }
 
+
+            //refresh the DataGridView
+            dataGridView1.DataSource = CustomerDAO.Instance.getAllCustomer();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
@@ -80,54 +72,24 @@ namespace CoffeeShop
 
         private void Customer_Load(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Customer ", DB.Instance.getConnection);
-            SqlDataAdapter adap = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adap.Fill(table);
-            dataGridView1.DataSource = table;
+            
+            dataGridView1.DataSource = CustomerDAO.Instance.getAllCustomer();
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-        public bool DeleteCustomer(int ID, string name, string address, string phone, int totalpay)
-        {
-            SqlCommand com = new SqlCommand("EXECUTE DeleteCustomer @C_ID,@C_Name,@C_Address,@C_Phone,@C_TotalPay ", DB.Instance.getConnection);
-            com.Parameters.AddWithValue("@C_ID", ID);
-            com.Parameters.AddWithValue("@C_Name", name);
-            com.Parameters.AddWithValue("@C_Address", address);
-            com.Parameters.AddWithValue("@C_Phone", phone);
-            com.Parameters.AddWithValue("@C_TotalPay", totalpay);
 
-            DB.Instance.openConnection();
-            if (com.ExecuteNonQuery() == 1)
-            {
-                DB.Instance.closeConnection();
-                return true;
-            }
-            else
-            {
-                DB.Instance.closeConnection();
-                return false;
-            }
-        }
         private void btdel_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(tbC_ID.Text);
-            string name = tb_Cname.Text;
-            string address = tb_Address.Text;
-            string phone = tb_Phone.Text;
-            int totalpay = Convert.ToInt32(tb_TotalPay.Text);
-            if (DeleteCustomer(id, name, address, phone, totalpay))
+            int cid = Convert.ToInt32(tbC_ID.Text);
+;
+            if (CustomerDAO.Instance.deleteCustomer(cid))
             {
                 MessageBox.Show("Deleted", "Delete Customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dataGridView1.DataSource = CustomerDAO.Instance.getAllCustomer();
             }
             else
             {
-                MessageBox.Show("Deleted", "Delete Customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SqlCommand command = new SqlCommand("SELECT * FROM Customer ", DB.Instance.getConnection);
-                SqlDataAdapter adap = new SqlDataAdapter(command);
-                DataTable table = new DataTable();
-                adap.Fill(table);
-                dataGridView1.DataSource = table;
+                MessageBox.Show("Deleted Failed", "Delete Customer", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

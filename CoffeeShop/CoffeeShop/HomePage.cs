@@ -204,18 +204,6 @@ namespace CoffeeShop
 
         private void bt_Signin_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM LO_GIN_Manager WHERE username=@user AND pass_word=@pass", DB.Instance.getConnection);
-            command.Parameters.Add("@user", SqlDbType.NVarChar).Value = tb_Account.Text;
-            command.Parameters.Add("@pass", SqlDbType.NVarChar).Value = tb_Password.Text;
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            SqlCommand command1 = new SqlCommand("SELECT * FROM LO_GIN_Employee WHERE username=@user1 AND pass_word=@pass1", DB.Instance.getConnection);
-            command1.Parameters.Add("@user1", SqlDbType.NVarChar).Value = tb_Account.Text;
-            command1.Parameters.Add("@pass1", SqlDbType.NVarChar).Value = tb_Password.Text;
-            SqlDataAdapter adapter1 = new SqlDataAdapter(command1);
-            DataTable table1 = new DataTable();
-            adapter1.Fill(table1);
             if (rbmanager.Checked == true)
             {
                 if (AccountDAO.Instance.signIn(tb_Account.Text, tb_Password.Text, "manager"))
@@ -303,10 +291,8 @@ namespace CoffeeShop
             pn_Menu_dataGridView1.ReadOnly = true;
             dataGridView1.ReadOnly = true;
             SqlCommand command = new SqlCommand("SELECT E_ID,E_Name FROM Employees WHERE E_Position='Cashier'", DB.Instance.getConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            comboBox1.DataSource = table;
+
+            comboBox1.DataSource = EmployeeDAO.Instance.GetEmployee(command);
             comboBox1.DisplayMember = "E_Name";
             comboBox1.ValueMember = "E_ID";
         }

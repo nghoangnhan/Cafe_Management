@@ -115,5 +115,10 @@ namespace CoffeeShop
                 MessageBox.Show("Error", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void pnwaiter_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -21,20 +21,12 @@ namespace CoffeeShop
         }
         void refresh()
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Item", DB.Instance.getConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable tableitem = new DataTable();
-            adapter.Fill(tableitem);
-            item_count = tableitem.Rows.Count;
-            dataGridView1.DataSource = tableitem;
+            dataGridView1.DataSource = ItemDAO.Instance.getAllItem();
         }
         private void EditItemForm_Load(object sender, EventArgs e)
         {
             dataGridView1.ReadOnly = true;
-            SqlCommand command = new SqlCommand("SELECT * FROM Item", DB.Instance.getConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable tableitem = new DataTable();
-            adapter.Fill(tableitem);
+            DataTable tableitem = ItemDAO.Instance.getAllItem();
             item_count = tableitem.Rows.Count;
             dataGridView1.DataSource = tableitem;
             dataGridView1.AllowUserToAddRows = false;

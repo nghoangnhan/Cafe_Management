@@ -57,6 +57,32 @@ namespace CoffeeShop.DAO
             command.Parameters.Add("@totalpay", SqlDbType.Int).Value = 0;
             return DB.Instance.executeFunction(command);
         }
+        public bool deleteCustomer(int cid)
+        {
+            SqlCommand command = new SqlCommand("DELETE Customer WHERE C_ID = @cid", DB.Instance.getConnection);
+            command.Parameters.Add("@cid", SqlDbType.Int).Value = cid;
+
+            return DB.Instance.executeFunction(command);
+        }
+        public DataTable searchCustomer(string searchString)
+        {
+            SqlCommand command = new SqlCommand("SELECT * FROM Customer WHERE CONCAT (C_ID, C_Name, C_Phone) LIKE '%" + searchString + "%'", DB.Instance.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+                return table;
+            else
+                return null;
+        }
+        public DataTable getAllCustomer()
+        {
+            SqlCommand command = new SqlCommand("SELECT * FROM Customer", DB.Instance.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
 
     }
 }

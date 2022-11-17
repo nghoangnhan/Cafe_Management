@@ -73,6 +73,7 @@ namespace CoffeeShop
             this.pnwaiter.Name = "pnwaiter";
             this.pnwaiter.Size = new System.Drawing.Size(521, 457);
             this.pnwaiter.TabIndex = 18;
+            this.pnwaiter.Paint += new System.Windows.Forms.PaintEventHandler(this.pnwaiter_Paint);
             // 
             // cbposi
             // 
@@ -133,7 +134,7 @@ namespace CoffeeShop
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(24, 296);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 17);
+            this.label1.Size = new System.Drawing.Size(65, 18);
             this.label1.TabIndex = 25;
             this.label1.Text = "Position:";
             // 
@@ -142,7 +143,7 @@ namespace CoffeeShop
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(24, 73);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 17);
+            this.label5.Size = new System.Drawing.Size(92, 18);
             this.label5.TabIndex = 15;
             this.label5.Text = "Staff Name:";
             // 
@@ -174,7 +175,7 @@ namespace CoffeeShop
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(24, 12);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 17);
+            this.label6.Size = new System.Drawing.Size(69, 18);
             this.label6.TabIndex = 14;
             this.label6.Text = "Staff ID:";
             // 
@@ -193,7 +194,7 @@ namespace CoffeeShop
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(24, 180);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 17);
+            this.label7.Size = new System.Drawing.Size(59, 18);
             this.label7.TabIndex = 16;
             this.label7.Text = "Address";
             // 
@@ -212,7 +213,7 @@ namespace CoffeeShop
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(24, 131);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 17);
+            this.label8.Size = new System.Drawing.Size(52, 18);
             this.label8.TabIndex = 17;
             this.label8.Text = "Phone:";
             // 
@@ -231,7 +232,7 @@ namespace CoffeeShop
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(24, 231);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 17);
+            this.label9.Size = new System.Drawing.Size(53, 18);
             this.label9.TabIndex = 18;
             this.label9.Text = "Salary:";
             // 
