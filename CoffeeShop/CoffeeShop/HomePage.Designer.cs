@@ -327,7 +327,6 @@ namespace CoffeeShop
             this.btguest.TabIndex = 19;
             this.btguest.Text = "Pay with guest";
             this.btguest.UseVisualStyleBackColor = false;
-            //this.btguest.Click += new System.EventHandler(this.btguest_Click);
             // 
             // tbDes
             // 
@@ -360,6 +359,7 @@ namespace CoffeeShop
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(212, 33);
             this.comboBox1.TabIndex = 16;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label6
             // 

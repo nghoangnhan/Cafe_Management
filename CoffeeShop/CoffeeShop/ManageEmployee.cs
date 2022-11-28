@@ -36,7 +36,7 @@ namespace CoffeeShop
             try
             {
                 string id = tbid.Text;
-                if (EmployeeDAO.Instance.editEmployee(id, name, address, phone, salary, position))
+                if (EmployeeDAO.Instance.editEmployee(id, name, phone, address, salary, position))
                 {
                     MessageBox.Show("Edited", "Edit", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -88,7 +88,7 @@ namespace CoffeeShop
             string phone = tbphone.Text;
             int salary = Convert.ToInt32(tbsalary.Text);
             string position = cbposi.Text;
-            if (EmployeeDAO.Instance.dismissEmployee(id, name, address, phone, salary, position))
+            if (!EmployeeDAO.Instance.dismissEmployee(id, name, phone, address, salary, position))
             {
                 MessageBox.Show("Dismissed", "Dismiss Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -106,7 +106,7 @@ namespace CoffeeShop
             string phone = tbphone.Text;
             int salary = Convert.ToInt32(tbsalary.Text);
             string position = cbposi.Text;
-            if(EmployeeDAO.Instance.addEmployee(id,name,address,phone,salary,position))
+            if(EmployeeDAO.Instance.addEmployee(id,name, phone, address,salary,position))
             {
                 MessageBox.Show("Added", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

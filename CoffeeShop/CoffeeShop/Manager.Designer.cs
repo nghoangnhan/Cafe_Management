@@ -63,6 +63,7 @@ namespace CoffeeShop
             this.gridcashier.RowTemplate.Height = 24;
             this.gridcashier.Size = new System.Drawing.Size(1065, 491);
             this.gridcashier.TabIndex = 34;
+            this.gridcashier.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridcashier_CellContentClick);
             // 
             // Manage_Toolstrip
             // 

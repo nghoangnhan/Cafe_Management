@@ -52,13 +52,8 @@ namespace CoffeeShop.DAO
         }
         public bool dismissEmployee(string ID, string name, string address, string phone, int salary, string position)
         {
-            SqlCommand command = new SqlCommand("EXECUTE Dismiss @E_id, @E_name, @E_addr, @E_phone, @E_salary, @E_position ", DB.Instance.getConnection);
+            SqlCommand command = new SqlCommand("DELETE Employees WHERE E_ID = @E_id ", DB.Instance.getConnection);
             command.Parameters.AddWithValue("@E_id", ID);
-            command.Parameters.AddWithValue("@E_name", name);
-            command.Parameters.AddWithValue("@E_addr", address);
-            command.Parameters.AddWithValue("@E_phone", phone);
-            command.Parameters.AddWithValue("@E_salary", salary);
-            command.Parameters.AddWithValue("@E_position", position);
 
             return DB.Instance.executeFunction(command);
 

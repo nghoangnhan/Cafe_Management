@@ -76,7 +76,6 @@
     <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
     <Compile Include="DAO\ItemDAO.cs" />
-    <Compile Include="DAO\MY_DB.cs" />
     <Compile Include="DAO\OrderDAO.cs" />
     <Compile Include="DAO\Order_ItemDAO.cs" />
     <Compile Include="DB.cs" />

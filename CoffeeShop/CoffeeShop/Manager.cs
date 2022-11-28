@@ -50,5 +50,10 @@ namespace CoffeeShop
             ManageEmployee mana=new ManageEmployee();
             mana.Show();
         }
+
+        private void gridcashier_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

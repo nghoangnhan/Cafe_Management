@@ -14,7 +14,7 @@ namespace CoffeeShop
                     instance = new DB();
                 return DB.instance;
             }
-            private set { DB.instance = value; }  //chỉ cho phép nội bộ class này thay đổi => bảo mật cao
+            private set { DB.instance = value; }
         }
 
         private DB() { }

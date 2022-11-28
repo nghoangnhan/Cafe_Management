@@ -4,7 +4,7 @@ GO
 USE CafeManager
 GO
 
-CREATE TABLE Employees (E_ID nvarchar(15) primary key, E_Name nvarchar(50), E_Address nvarchar(50), E_Phone nvarchar(11), E_Salary int, E_Position nvarchar(10))
+CREATE TABLE Employees (E_ID nvarchar(15) primary key, E_Name nvarchar(50), E_Phone nvarchar(11), E_Address nvarchar(50), E_Salary int, E_Position nvarchar(10))
 Go
 CREATE TABLE Customer (C_ID int IDENTITY (1, 1) primary key, C_Name nvarchar(50), C_Phone nvarchar(11) unique, C_Address nvarchar(50), C_TotalPay int)
 GO
