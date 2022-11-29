@@ -17,11 +17,23 @@ namespace CoffeeShop
     {
         int id;
         int count = 0;
-
         public HomePage()
         {
             InitializeComponent();
         }
+
+        private static HomePage homePage;
+        public static HomePage homepage
+        {
+            get
+            {
+                if (homePage == null)
+                    homePage = new HomePage();
+                return homePage;
+            }
+            private set => homePage = value;
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -32,7 +44,6 @@ namespace CoffeeShop
 
         void refresh()
         {
-            panel_Login.Hide();
             panel_Menu.Hide();
 
             panel_Menu.Show();
@@ -91,7 +102,15 @@ namespace CoffeeShop
 
         private void bt_Customer_Click(object sender, EventArgs e)
         {
-            panel_Login.Hide();
+            pn_Menu_dataGridView1.AllowUserToAddRows = false;
+            pn_Menu_dataGridView1.ReadOnly = true;
+            dataGridView1.ReadOnly = true;
+            SqlCommand command = new SqlCommand("SELECT E_ID,E_Name FROM Employees WHERE E_Position='Cashier'", DB.Instance.getConnection);
+
+            comboBox1.DataSource = EmployeeDAO.Instance.GetEmployee(command);
+            comboBox1.DisplayMember = "E_Name";
+            comboBox1.ValueMember = "E_ID";
+
             panel_Menu.Hide();
             refresh();
             panel_Menu.Show();
@@ -99,10 +118,12 @@ namespace CoffeeShop
             pn_Menu_dataGridView1.DataSource = ItemDAO.Instance.getAllItem();
             pn_Menu_dataGridView1.AllowUserToAddRows = false;
             pn_Menu_dataGridView1.ReadOnly = true;
+            pn_Menu_dataGridView1.Columns[0].Visible = false;
         }
 
         private void bt_Staff_Click(object sender, EventArgs e)
         {
+            Hide();
             Manager mana = new Manager();
             mana.Show();
         }
@@ -120,12 +141,13 @@ namespace CoffeeShop
 
                 billform.bill = bill;
                 billform.Show();
+                Hide();
             }
             else
             {
                 if (dataGridView1.Rows.Count == 0)
                 {
-                    MessageBox.Show("No item selected!", "Ordering", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Không có sản phẩm nào được chọn!", "Order", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -137,6 +159,7 @@ namespace CoffeeShop
 
                     billform.bill = bill;
                     billform.Show();
+                    Hide();
                 }
             }
         }
@@ -201,50 +224,10 @@ namespace CoffeeShop
             }
 
         }
-
-        private void bt_Signin_Click(object sender, EventArgs e)
-        {
-            if (rbmanager.Checked == true)
-            {
-                if (AccountDAO.Instance.signIn(tb_Account.Text, tb_Password.Text, "manager"))
-                {
-                    tb_Account.Clear();
-                    tb_Password.Clear();
-                    bt_Manager.Enabled = true;
-                    bt_Income.Enabled = true;
-                    bt_Customer.Enabled = true;
-                }
-                else
-                {
-                    MessageBox.Show("Sign Failed", "Sign In", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else if (rbemployee.Checked == true)
-            {
-                if (AccountDAO.Instance.signIn(tb_Account.Text, tb_Password.Text, "employee"))
-                {
-                    tb_Account.Clear();
-                    tb_Password.Clear();
-                    bt_Staff.Enabled = true;
-                    bt_Checking.Enabled = true;
-                    bt_Manager.Enabled = true;
-                }
-                else
-                {
-                    MessageBox.Show("Sign Failed", "Sign In", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please choose who you are", "Sign In", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
         private void bt_Checking_Click(object sender, EventArgs e)
         {
+            Hide();
             CheckingForm emp = new CheckingForm();
-            emp.homepage = this;
             emp.Show();
         }
 
@@ -252,33 +235,21 @@ namespace CoffeeShop
         {
             CustomerForm ct = new CustomerForm();
             ct.Show();
+            Hide();
         }
 
         private void bt_Income_Click(object sender, EventArgs e)
         {
             IncomeForm icf = new IncomeForm();
             icf.Show();
+            Hide();
         }
-
-        private void btclose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
+        private void bt_Refresh_Click(object sender, EventArgs e)
         {
             reset();
             tb_Phone.Text = null;
             tb_CusName.Clear();
             tbDes.Clear();
-        }
-        private void btlogout_Click(object sender, EventArgs e)
-        {
-            bt_Customer.Enabled = false;
-            bt_Manager.Enabled = false;
-            bt_Staff.Enabled = false;
-            bt_Checking.Enabled = false;
-            bt_Income.Enabled = false;
         }
         #endregion
 
@@ -286,15 +257,6 @@ namespace CoffeeShop
         private void HomePage_Load(object sender, EventArgs e)
         {
             reset();
-            panel_Menu.Hide();
-            pn_Menu_dataGridView1.AllowUserToAddRows = false;
-            pn_Menu_dataGridView1.ReadOnly = true;
-            dataGridView1.ReadOnly = true;
-            SqlCommand command = new SqlCommand("SELECT E_ID,E_Name FROM Employees WHERE E_Position='Cashier'", DB.Instance.getConnection);
-
-            comboBox1.DataSource = EmployeeDAO.Instance.GetEmployee(command);
-            comboBox1.DisplayMember = "E_Name";
-            comboBox1.ValueMember = "E_ID";
         }
        
         private void pn_Menu_dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -324,7 +286,7 @@ namespace CoffeeShop
             Order_ItemDAO.Instance.AddOrder_Item(num, name, 1);
             id = num;
 
-            SqlCommand command = new SqlCommand("SELECT * FROM Order_Item WHERE O_Num = " + id);
+            SqlCommand command = new SqlCommand("SELECT O_Num[Số Order], It_Name[Tên món], It_Quantity[Số lượng] FROM Order_Item WHERE O_Num = " + id);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             command.Connection = DB.Instance.getConnection;
             DataTable table1 = new DataTable();
@@ -334,28 +296,18 @@ namespace CoffeeShop
                 dataGridView1.DataSource = table1;
             }
         }
-
-        private void panel_Menu_Paint(object sender, PaintEventArgs e)
+        private void btsignout_Click(object sender, EventArgs e)
         {
-            
-        }
-        
-        
-
-        private void listBox_Bill_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            LoginForm.loginform.Show();
+            Hide();
         }
 
-
-        
-
-        private void pn_Menu_dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void HomePage_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            LoginForm.loginform.Close();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void btguest_Click(object sender, EventArgs e)
         {
 
         }

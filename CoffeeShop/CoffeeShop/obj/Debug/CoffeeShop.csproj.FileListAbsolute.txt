@@ -62,10 +62,7 @@ D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\bin\Debug\CoffeeShop.exe
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\bin\Debug\CoffeeShop.pdb
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.csproj.AssemblyReference.cache
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.csproj.SuggestedBindingRedirects.cache
-D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.AddManager.resources
-D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.CoffeeShopManage.resources
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.EditItemForm.resources
-D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Find.resources
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.HomePage.resources
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.IncomeForm.resources
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Manager.resources
@@ -106,3 +103,4 @@ D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Bil
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.CustomerForm.resources
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.CheckingForm.resources
 D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.CheckingForm.resources
+D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.LoginForm.resources

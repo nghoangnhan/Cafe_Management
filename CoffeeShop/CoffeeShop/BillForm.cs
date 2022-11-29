@@ -59,7 +59,7 @@ namespace CoffeeShop
                     }
                 if (bill.C_ID == 10)
                 {
-                    listBox_Bill.Items.Add("Total: " + total);
+                    listBox_Bill.Items.Add("Tổng: " + total);
                     BillDAO.Instance.addBill(bill.Order_Number, bill.E_ID, 10, bdate, total, bill.Description);     // 10: co' the? la` so' khac' (phai? ton` tai.)
                 }
                 else
@@ -68,13 +68,13 @@ namespace CoffeeShop
                     int total_discounted = BillDAO.Instance.getBill(bill.Order_Number, bdate).Total;
                     if (total_discounted < total)
                     {
-                        listBox_Bill.Items.Add("Discount: 10%");
+                        listBox_Bill.Items.Add("Giảm giá: 10%");
                         total = total_discounted;
-                        listBox_Bill.Items.Add("Discounted Total: " + total);
+                        listBox_Bill.Items.Add("Giá đã giảm: " + total);
                     }
                 }
-                listBox_Bill.Items.Add("Cashier: " + bill.E_ID);
-                listBox_Bill.Items.Add("Description: " + bill.Description);
+                listBox_Bill.Items.Add("Thu ngân: " + HomePage.homepage.comboBox1.Text);
+                listBox_Bill.Items.Add("Mô tả: " + bill.Description);
             }
             catch (Exception ex)
             {
@@ -88,7 +88,7 @@ namespace CoffeeShop
             {
                 if (Convert.ToInt32(tb_cashin.Text) < total)
                 {
-                    MessageBox.Show("Invalid Money!", "Bill", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Số tiền không hợp lệ!", "Hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -98,7 +98,7 @@ namespace CoffeeShop
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Lỗi");
             }
         }
 
@@ -135,6 +135,7 @@ namespace CoffeeShop
                 Graphics g = Graphics.FromImage(bitmap);
                 g.DrawImage(logo, new Point((bitmap.Width - logo.Width) / 2, (bitmap.Height - logo.Height) / 2));
                 picboxqr.Image = bitmap;
+                picboxqr.Show();
             }
             catch (Exception ex)
             {
@@ -158,11 +159,17 @@ namespace CoffeeShop
                 Graphics g = Graphics.FromImage(bitmap);
                 g.DrawImage(logo, new Point((bitmap.Width - logo.Width) / 2, (bitmap.Height - logo.Height) / 2));
                 picboxqr.Image = bitmap;
+                picboxqr.Show();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void BillForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            HomePage.homepage.Show();
         }
     }
 }

@@ -77,7 +77,7 @@ namespace CoffeeShop.DAO
         }
         public DataTable getAllCustomer()
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Customer", DB.Instance.getConnection);
+            SqlCommand command = new SqlCommand("SELECT C_ID[Mã khách hàng], C_Name[Tên khách hàng], C_Phone[Số điện thoại], C_Address[Địa chỉ], C_TotalPay[Tổng chi tiêu] FROM Customer", DB.Instance.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);

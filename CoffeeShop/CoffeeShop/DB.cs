@@ -6,6 +6,7 @@ namespace CoffeeShop
     public class DB
     {
         private static DB instance;
+        
         public static DB Instance
         {
             get
@@ -19,8 +20,8 @@ namespace CoffeeShop
 
         private DB() { }
 
-        public SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-7CAKEUV0;Initial Catalog=CafeManager;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-        //public SqlConnection con = new SqlConnection(@"Data Source=MSI\MSSQLSEVER;Initial Catalog=CafeManager;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        //public SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-7CAKEUV0;Initial Catalog=CafeManager;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        public SqlConnection con = new SqlConnection(@"Data Source=MSI\MSSQLSEVER;Initial Catalog=CafeManager;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public SqlConnection getConnection
         {
             get

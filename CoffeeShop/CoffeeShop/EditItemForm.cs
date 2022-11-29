@@ -44,9 +44,9 @@ namespace CoffeeShop
             string name = tb_ItemName.Text;
             int price = Convert.ToInt32(tb_Price.Text);
             if(ItemDAO.Instance.updateItem(id, name, price))
-                MessageBox.Show("Updated", "Update Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Đã cập nhật!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("Failed", "Update Item", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Lỗi!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             refresh();
 
         }
@@ -58,18 +58,18 @@ namespace CoffeeShop
             int price = Convert.ToInt32(tb_Price.Text);
 
             if (ItemDAO.Instance.addItem(id, name, price))
-                MessageBox.Show("Added", "Add Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Đã thêm sản phẩm!", "Thêm sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("Failed", "Add Item", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Lỗi!", "Thêm sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             refresh();
         }
         private void bt_remove_Click(object sender, EventArgs e)
         {
             string id = tb_ItemID.Text;
             if(ItemDAO.Instance.deleteItem(id))
-                MessageBox.Show("Deleted", "Delete Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Đã xóa sản phẩm!", "Xóa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("Failed", "Delete Item", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Lỗi!", "Xóa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             refresh();
         }
     }

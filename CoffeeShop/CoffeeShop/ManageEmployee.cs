@@ -38,17 +38,23 @@ namespace CoffeeShop
                 string id = tbid.Text;
                 if (EmployeeDAO.Instance.editEmployee(id, name, phone, address, salary, position))
                 {
-                    MessageBox.Show("Edited", "Edit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đã cập nhật!", "Cập nhật nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tbid.Text = "";
+                    tbname.Text = "";
+                    tbphone.Text = "";
+                    tbaddress.Text = "";
+                    tbsalary.Text = "";
+                    cbposi.Text = "";
                 }
                 else
                 {
-                    MessageBox.Show("Empty Field", "Add Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi!", "Cập nhật nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Edit");
+                MessageBox.Show(ex.Message, "Cập nhật nhân viên");
             }
         }
 
@@ -71,7 +77,7 @@ namespace CoffeeShop
             }
             else
             {
-                MessageBox.Show("Cannot Find Staff", "Find Staff", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không thể tìm thấy nhân viên với mã số này!", "Tìm nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -90,11 +96,17 @@ namespace CoffeeShop
             string position = cbposi.Text;
             if (!EmployeeDAO.Instance.dismissEmployee(id, name, phone, address, salary, position))
             {
-                MessageBox.Show("Dismissed", "Dismiss Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Đã xóa!", "Xóa nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tbid.Text = "";
+                tbname.Text = "";
+                tbphone.Text = "";
+                tbaddress.Text = "";
+                tbsalary.Text = "";
+                cbposi.Text = "";
             }
             else
             {
-                MessageBox.Show("Error", "Dismiss Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Lỗi!", "Xóa nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -108,11 +120,17 @@ namespace CoffeeShop
             string position = cbposi.Text;
             if(EmployeeDAO.Instance.addEmployee(id,name, phone, address,salary,position))
             {
-                MessageBox.Show("Added", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Đã thêm!", "Thêm nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tbid.Text = "";
+                tbname.Text = "";
+                tbphone.Text = "";
+                tbaddress.Text = "";
+                tbsalary.Text = "";
+                cbposi.Text = "";
             }
             else
             {
-                MessageBox.Show("Error", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Lỗi!", "Thêm nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

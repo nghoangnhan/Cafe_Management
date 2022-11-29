@@ -1,9 +1,7 @@
-﻿--Đã xóa View
-CREATE DATABASE CafeManager
+﻿CREATE DATABASE CafeManager
 GO
 USE CafeManager
 GO
-
 CREATE TABLE Employees (E_ID nvarchar(15) primary key, E_Name nvarchar(50), E_Phone nvarchar(11), E_Address nvarchar(50), E_Salary int, E_Position nvarchar(10))
 Go
 CREATE TABLE Customer (C_ID int IDENTITY (1, 1) primary key, C_Name nvarchar(50), C_Phone nvarchar(11) unique, C_Address nvarchar(50), C_TotalPay int)
@@ -30,21 +28,20 @@ B_Total int,
 B_Description nvarchar(50))
 GO
 
+ INSERT INTO Employees VALUES ('e000' 	, N'Lê Hoàng Lâm' 	, '0938591504' 	, N'Thủ Đức' 	,20000000		 ,N'Quản lý')
+ INSERT INTO Employees VALUES ('e001' 	, N'Nguyễn Hoàng Nhân' 	, '0798931234' 	, N'Thủ Đức' 	,20000000		 ,N'Quản lý')
+ INSERT INTO Employees VALUES ('e002' 	, N'Tạ Hoài Nam' 	, '0909232603' 	, N'Thủ Đức' 	,10000000		 ,N'Pha chế')
+ INSERT INTO Employees VALUES ('e003' 	, N'Nguyễn Văn Hơn' 	, '0953536346' 	, N'Quận 1' 	,8000000		 ,N'Pha chế')
+ INSERT INTO Employees VALUES ('e004' 	, N'Vũ Trọng Nhân' 	, '0921424142' 	, N'Quận 10' 	,8000000		 ,N'Pha chế')
+ INSERT INTO Employees VALUES ('e005' 	, N'Nguyễn Hoàng Nhật Nam' 	, '0909252673' 	, N'Thủ Đức' 	,6000000		, N'Thu ngân')
+ INSERT INTO Employees VALUES ('e006' 	, N'Nguyễn Việt Anh' 	, '0734345352' 	, N'Quận 2' 	,5500000		, N'Thu ngân')
 
- INSERT INTO Employees VALUES ('e001' 	, 'Ta Hoai Nam' 	, '0909232603' 	, 'Thu Duc' 	,10000000		 ,'Barista')
- INSERT INTO Employees VALUES ('e002' 	, 'Nguyen Hoang Nhan' 	, '0798931234' 	, 'Thu Duc' 	,7000000		 ,'Barista')
- INSERT INTO Employees VALUES ('e003' 	, 'Nguyen Van Hon' 	, '0953536346' 	, 'Quan 1' 	,8000000		 ,'Barista')
- INSERT INTO Employees VALUES ('e004' 	, 'Vu Trong Nhan' 	, '0921424142' 	, 'Quan 10' 	,8000000		 ,'Barista')
-
- INSERT INTO Employees VALUES ('e005' 	, 'Nguyen Hoang Nhat Nam' 	, '0909252673' 	, 'Thu Duc' 	,6000000		, 'Cashier')
- INSERT INTO Employees VALUES ('e006' 	, 'Nguyen Viet Anh' 	, '0734345352' 	, 'Quan 2' 	,5500000		, 'Cashier')
-
- INSERT INTO Employees VALUES ('e009' 	, 'Nguyen Huynh Thanh Toan' 		, '0926266222' 	, 'Binh Duong' 	,8000000		, 'Waiter')
- INSERT INTO Employees VALUES ('e010' 	, 'Tran Minh Gia Khanh' 			, '0943536256' 	, 'Quan 9' 	,8000000		, 'Waiter')
- INSERT INTO Employees VALUES ('e011' 	, 'Le Tan Loc' 	, '0935642158' 		, 'Quan 2' 	,8000000		, 'Waiter')
- INSERT INTO Employees VALUES ('e012' 	, 'Le Khanh Linh' 	, '0926263637' 	, 'Thu Duc' 	,8000000		, 'Waiter')
- INSERT INTO Employees VALUES ('e013' 	, 'Ly Hong Khanh' 	, '0987562415' 	, 'Thu Duc' 	,8000000		, 'Waiter')
- INSERT INTO Employees VALUES ('e014' 	, 'Le Y Thien' 	, '0921578112' 		, 'Thu Duc' 	,8000000		, 'Waiter')
+ INSERT INTO Employees VALUES ('e009' 	, N'Nguyễn Huỳnh Thanh Toàn' 		, '0926266222' 	, N'Bình Dương' 	,8000000		, N'Bồi bàn')
+ INSERT INTO Employees VALUES ('e010' 	, N'Trần Minh Gia Khánh' 			, '0943536256' 	, N'Quận 9' 	,8000000		, N'Bồi bàn')
+ INSERT INTO Employees VALUES ('e011' 	, N'Lê Tấn Lộc' 	, '0935642158' 		, N'Quận 2' 	,8000000		, N'Bồi bàn')
+ INSERT INTO Employees VALUES ('e012' 	, N'Lê Khánh Linh' 	, '0926263637' 	, N'Thủ Đức' 	,8000000		, N'Bồi bàn')
+ INSERT INTO Employees VALUES ('e013' 	, N'Lý Hồng Khanh' 	, '0987562415' 	, N'Thủ Đức' 	,8000000		, N'Bồi bàn')
+ INSERT INTO Employees VALUES ('e014' 	, N'Lê Y Thiện' 	, '0921578112' 		, N'Thủ Đức' 	,8000000		, N'Bồi bàn')
 
  INSERT INTO Item VALUES ('i001' 	, 'Expresso' 		,30000 )
  INSERT INTO Item VALUES ('i002' 	, 'Cafe Americano' 	,35000)
@@ -80,16 +77,16 @@ GO
 
 
 
-INSERT INTO Customer VALUES(  'Nguyen Van A' 	 , '0121321342' 	 , 'Thu Duc' 	 , '90000' )
-INSERT INTO Customer VALUES(  'Le Van B' 	 , '0242343414' 	 , 'Thu Duc' 	 , '40000') 
-INSERT INTO Customer VALUES('Tran Van C' 	 , '0947375352' 	 , 'Quan 2' 	 , '75000' )
-INSERT INTO Customer VALUES(  'Nguyen Thi D' 	 , '0235232253' 	 , 'Quan 9' 	 , '125000' )
-INSERT INTO Customer VALUES(  'Duong Van F' 	 , '0634622642' 	 , 'Thu Duc' 	 , '90000' )
-INSERT INTO Customer VALUES(  'Le Thi E' 	 , '0545357723' 	 , 'Thu Duc' 	 , '80000' )
-INSERT INTO Customer VALUES(  'Nguyen Hoang G' 	 , '0997876663' 	 , 'Quan 2' 	 , '40000' )
-INSERT INTO Customer VALUES(  'Nguyen Huynh H' 	 , '0132423532' 	 , 'Thu Duc' 	 , '30000' )
-INSERT INTO Customer VALUES(  'Ly Hoang L' 	 , '0723525244' 	 , 'Thu Duc' 	 , '40000' )
-INSERT INTO Customer VALUES(  'Bui Tuan K' 	 , '0141242535' 	 , 'Quan 1' 	 , '85000' )
+INSERT INTO Customer VALUES(  N'Nguyễn Văn A' 	 , '0121321342' 	 , N'Thủ Đức' 	 , '90000' )
+INSERT INTO Customer VALUES(  N'Lê Văn B' 	 , '0242343414' 	 , N'Thủ Đức' 	 , '40000') 
+INSERT INTO Customer VALUES(N'Trần Văn C' 	 , '0947375352' 	 , N'Quan 2' 	 , '75000' )
+INSERT INTO Customer VALUES(  N'Nguyễn Thị D' 	 , '0235232253' 	 , N'Quận 9' 	 , '125000' )
+INSERT INTO Customer VALUES(  N'Dương Văn F' 	 , '0634622642' 	 , N'Thủ Đức' 	 , '90000' )
+INSERT INTO Customer VALUES(  N'Lê Thị E' 	 , '0545357723' 	 , N'Thủ Đức' 	 , '80000' )
+INSERT INTO Customer VALUES(  N'Nguyễn Hoàng G' 	 , '0997876663' 	 , N'Quận 2' 	 , '40000' )
+INSERT INTO Customer VALUES(  N'Nguyễn Huỳnh H' 	 , '0132423532' 	 , N'Thủ Đức' 	 , '30000' )
+INSERT INTO Customer VALUES(  N'Lý Hoàng L' 	 , '0723525244' 	 , N'Thủ Đức' 	 , '40000' )
+INSERT INTO Customer VALUES(  N'Bùi Tuấn K' 	 , '0141242535' 	 , N'Quận 1' 	 , '85000' )
 
 
  INSERT INTO Order_Item VALUES('1'  ,'Lychee Tea'			,2)
@@ -136,7 +133,7 @@ INSERT INTO Customer VALUES(  'Bui Tuan K' 	 , '0141242535' 	 , 'Quan 1' 	 , '85
  BEGIN
  INSERT INTO Employees (E_ID, E_Name, E_Phone, E_Address, E_Salary, E_Position) VALUES (@eid, @ename, @ephone, @eaddr,  @esalary, @eposition)
  END
-
+ GO
 
  CREATE PROC Dismiss
  @E_id	nvarchar(15),
@@ -149,6 +146,7 @@ INSERT INTO Customer VALUES(  'Bui Tuan K' 	 , '0141242535' 	 , 'Quan 1' 	 , '85
  BEGIN
 DELETE FROM Employees WHERE E_ID=@E_id 
 END
+GO
 
  CREATE PROC Edit
  @E_id	nvarchar(15),
@@ -161,6 +159,7 @@ END
  BEGIN
 UPDATE Employees SET E_Name=@E_name, E_Address= @E_addr,E_Phone= @E_phone,E_Salary= @E_salary,E_Position= @E_position WHERE E_ID=@E_id 
 END
+GO
 
  CREATE PROC CHAM
  @E_id	nvarchar(15),
@@ -171,6 +170,7 @@ END
  BEGIN
 INSERT INTO CHECKING (E_ID,DAY_ID,DAY_CHECK,MONTH_ID) VALUES (@E_id,@DAY_id,@DAY_check,@MONTH_id)
 END
+GO
 
 --CoffeeShop Management
 CREATE PROC Add_OrderItem
@@ -329,6 +329,7 @@ SELECT @totalpay = dbo.checkTotalPay(@cid)
 if(@totalpay >= 1000000) SET @total = @total * 0.9
 UPDATE Bill SET B_Total = @total WHERE B_Num = @bnum
 UPDATE Customer SET C_TotalPay = @totalpay + @total WHERE @cid = C_ID
+GO
 
 CREATE TRIGGER TriggerAddOrder_Item
 ON Order_Item
@@ -346,6 +347,7 @@ IF( NOT EXISTS(Select * FROM Order_Item WHERE O_Num = @onum AND It_Name = @itnam
 ELSE 
 	SET @quan = @quan +	1
 UPDATE Order_Item SET It_Quantity = @quan WHERE O_Num = @onum AND It_Name = @itname
+GO
 
 CREATE TRIGGER TriggerCustomer
 ON Customer
@@ -411,6 +413,7 @@ ROLLBACK TRANSACTION
 RETURN
 END
 COMMIT TRANSACTION
+GO
 
 
 

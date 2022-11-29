@@ -51,7 +51,7 @@ namespace CoffeeShop.DAO
         }
         public DataTable getAllItem()
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Item", DB.Instance.getConnection);
+            SqlCommand command = new SqlCommand("SELECT It_ID[Mã sản phẩm], It_Name[Tên món], It_Cost[Giá tiền] FROM Item", DB.Instance.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);

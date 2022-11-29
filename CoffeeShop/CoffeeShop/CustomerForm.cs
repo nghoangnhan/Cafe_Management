@@ -54,12 +54,12 @@ namespace CoffeeShop
             if(CustomerDAO.Instance.checkCustomer(phone) == null)
             {
                 if (CustomerDAO.Instance.addCustomer(cname, phone, address))
-                    MessageBox.Show("Success", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm thành công!", "Khách hàng mới", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
-                    MessageBox.Show("Fail", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Lỗi!", "Khách hàng mới", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
-                MessageBox.Show("Phone number has been used", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Số điện thoại này đã tồn tại!", "Khách hàng mới", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
 
             //refresh the DataGridView
@@ -84,13 +84,18 @@ namespace CoffeeShop
 ;
             if (CustomerDAO.Instance.deleteCustomer(cid))
             {
-                MessageBox.Show("Deleted", "Delete Customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Xóa thành công!", "Xóa khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridView1.DataSource = CustomerDAO.Instance.getAllCustomer();
             }
             else
             {
-                MessageBox.Show("Deleted Failed", "Delete Customer", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Xóa thất bại!", "Xóa khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void CustomerForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            HomePage.homepage.Show();
         }
     }
 }

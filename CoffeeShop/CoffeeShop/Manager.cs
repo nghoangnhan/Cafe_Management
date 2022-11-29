@@ -21,14 +21,14 @@ namespace CoffeeShop
         
         private void Manager_Load(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Employees", DB.Instance.getConnection);
+            SqlCommand command = new SqlCommand("SELECT E_ID[Mã nhân viên], E_Name[Họ tên], E_Phone[Số điện thoại], E_Address[Địa chỉ], E_Salary[Lương], E_Position[Chức vụ]  FROM Employees", DB.Instance.getConnection);
             gridcashier.ReadOnly = true;
             gridcashier.AllowUserToAddRows = false;
             gridcashier.DataSource = EmployeeDAO.Instance.GetEmployee(command);
         }
         private void btrefresh_Click_1(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand(@"SELECT * FROM Employees");
+            SqlCommand command = new SqlCommand("SELECT E_ID[Mã nhân viên], E_Name[Họ tên], E_Phone[Số điện thoại], E_Address[Địa chỉ], E_Salary[Lương], E_Position[Chức vụ]  FROM Employees", DB.Instance.getConnection);
             gridcashier.ReadOnly = true;
             gridcashier.AllowUserToAddRows = false;
             gridcashier.DataSource = EmployeeDAO.Instance.GetEmployee(command);
@@ -50,10 +50,9 @@ namespace CoffeeShop
             ManageEmployee mana=new ManageEmployee();
             mana.Show();
         }
-
-        private void gridcashier_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Manager_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            HomePage.homepage.Show();
         }
     }
 }

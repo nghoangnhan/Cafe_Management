@@ -52,12 +52,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddManager.Designer.cs">
-      <DependentUpon>AddManager.cs</DependentUpon>
-    </Compile>
     <Compile Include="BillForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +81,12 @@
     <Compile Include="DTO\Item.cs" />
     <Compile Include="DTO\Order.cs" />
     <Compile Include="DTO\Order_Item.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,14 +125,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddManager.resx">
-      <DependentUpon>AddManager.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BillForm.resx">
       <DependentUpon>BillForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageEmployee.resx">
       <DependentUpon>ManageEmployee.cs</DependentUpon>
