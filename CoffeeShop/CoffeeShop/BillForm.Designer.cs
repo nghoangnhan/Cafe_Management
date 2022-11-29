@@ -29,6 +29,7 @@ namespace CoffeeShop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BillForm));
             this.listBox_Bill = new System.Windows.Forms.ListBox();
             this.tb_cashin = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -175,6 +176,7 @@ namespace CoffeeShop
             this.Controls.Add(this.tb_cashin);
             this.Controls.Add(this.listBox_Bill);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BillForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hóa đơn";

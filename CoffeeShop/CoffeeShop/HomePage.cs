@@ -305,6 +305,7 @@ namespace CoffeeShop
         private void HomePage_FormClosed(object sender, FormClosedEventArgs e)
         {
             LoginForm.loginform.Close();
+            LoadingForm.loadingform.Close();
         }
 
         private void btguest_Click(object sender, EventArgs e)

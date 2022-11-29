@@ -154,7 +154,7 @@ namespace CoffeeShop
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Xóa Check-in", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi!", "Xóa Check-in", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             SqlCommand command = new SqlCommand(@"SELECT E_ID[Mã nhân viên],DAY_ID[Ngày],DAY_CHECK[Check],MONTH_ID[Tháng] FROM CHECKING");
             dataGridView2.ReadOnly = true;

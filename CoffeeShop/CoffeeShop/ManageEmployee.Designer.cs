@@ -29,6 +29,7 @@ namespace CoffeeShop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageEmployee));
             this.pnwaiter = new System.Windows.Forms.Panel();
             this.cbposi = new System.Windows.Forms.ComboBox();
             this.btdismiss = new System.Windows.Forms.Button();
@@ -272,6 +273,7 @@ namespace CoffeeShop
             this.ClientSize = new System.Drawing.Size(578, 540);
             this.Controls.Add(this.pnwaiter);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhân viên";

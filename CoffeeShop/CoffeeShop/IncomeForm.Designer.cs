@@ -29,6 +29,7 @@ namespace CoffeeShop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncomeForm));
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.bt_Check = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -44,7 +45,7 @@ namespace CoffeeShop
             this.dateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.dateTimePicker1.Font = new System.Drawing.Font("MS Reference Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(298, 78);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(639, 40);
             this.dateTimePicker1.TabIndex = 0;
@@ -56,7 +57,7 @@ namespace CoffeeShop
             this.bt_Check.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Check.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.bt_Check.Location = new System.Drawing.Point(298, 151);
-            this.bt_Check.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_Check.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Check.Name = "bt_Check";
             this.bt_Check.Size = new System.Drawing.Size(289, 50);
             this.bt_Check.TabIndex = 1;
@@ -68,7 +69,7 @@ namespace CoffeeShop
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(36, 226);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -81,7 +82,7 @@ namespace CoffeeShop
             this.bt_Next.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Next.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.bt_Next.Location = new System.Drawing.Point(947, 78);
-            this.bt_Next.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_Next.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Next.Name = "bt_Next";
             this.bt_Next.Size = new System.Drawing.Size(82, 52);
             this.bt_Next.TabIndex = 3;
@@ -95,7 +96,7 @@ namespace CoffeeShop
             this.bt_Previous.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Previous.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.bt_Previous.Location = new System.Drawing.Point(208, 78);
-            this.bt_Previous.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_Previous.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Previous.Name = "bt_Previous";
             this.bt_Previous.Size = new System.Drawing.Size(82, 52);
             this.bt_Previous.TabIndex = 4;
@@ -122,7 +123,7 @@ namespace CoffeeShop
             this.bt_Checkmonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Checkmonth.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.bt_Checkmonth.Location = new System.Drawing.Point(650, 151);
-            this.bt_Checkmonth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_Checkmonth.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Checkmonth.Name = "bt_Checkmonth";
             this.bt_Checkmonth.Size = new System.Drawing.Size(289, 50);
             this.bt_Checkmonth.TabIndex = 6;
@@ -145,7 +146,8 @@ namespace CoffeeShop
             this.Controls.Add(this.dateTimePicker1);
             this.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "IncomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thu nhập";

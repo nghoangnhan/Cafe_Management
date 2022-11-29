@@ -104,3 +104,4 @@ D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Cus
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.CheckingForm.resources
 D:\HocKi1_Nam3\ITProject\Project\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.CheckingForm.resources
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.LoginForm.resources
+D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.LoadingForm.resources

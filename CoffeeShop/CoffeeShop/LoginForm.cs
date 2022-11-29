@@ -39,7 +39,9 @@ namespace CoffeeShop
                     tb_Password.Clear();
                     HomePage.homepage.bt_Income.Enabled = true;
                     HomePage.homepage.bt_Manager.Enabled = true;
-                    HomePage.homepage.Show();
+                    LoadingForm.loadingform.progressBar1.Value = 0;
+                    LoadingForm.loadingform.Show();
+                    LoadingForm.loadingform.timer2.Start();
                     Hide();
                 }
                 else
@@ -55,7 +57,9 @@ namespace CoffeeShop
                     tb_Password.Clear();
                     HomePage.homepage.bt_Income.Enabled = false;
                     HomePage.homepage.bt_Manager.Enabled = false;
-                    HomePage.homepage.Show();
+                    LoadingForm.loadingform.progressBar1.Value = 0;
+                    LoadingForm.loadingform.Show();
+                    LoadingForm.loadingform.timer2.Start();
                     Hide();
                 }
                 else
@@ -73,6 +77,23 @@ namespace CoffeeShop
         private void LoginForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btSignin_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btSignin_MouseLeave(object sender, EventArgs e)
+        {
+            btSignin.BackColor = Color.Transparent;
+            btSignin.ForeColor = Color.Transparent;
+        }
+
+        private void btSignin_MouseEnter(object sender, EventArgs e)
+        {
+            btSignin.BackColor = Color.White;
+            btSignin.ForeColor = Color.Black;
         }
     }
 }
