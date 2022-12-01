@@ -76,7 +76,7 @@ namespace CoffeeShop
             int total = 0;
             for(int i = 0; i < table.Rows.Count; i ++)
             {
-                total += Convert.ToInt32(table.Rows[i]["B_Total"]);
+                total += Convert.ToInt32(table.Rows[i]["Tổng hóa đơn"]);
             }
             lb_Total.Text = "Tổng: " + total.ToString() + " VND";
             dataGridView1.AllowUserToAddRows = false;
@@ -97,7 +97,7 @@ namespace CoffeeShop
             int total = 0;
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                total += Convert.ToInt32(table.Rows[i]["B_Total"]);
+                total += Convert.ToInt32(table.Rows[i]["Tổng hóa đơn"]);
             }
             dataGridView1.DataSource = table;
             lb_Total.Text = "Tổng: " + total.ToString() + " VND";

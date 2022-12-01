@@ -68,6 +68,8 @@ namespace CoffeeShop
             // bt_Manager
             // 
             this.bt_Manager.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_Manager.FlatAppearance.BorderSize = 2;
+            this.bt_Manager.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.bt_Manager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Manager.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Manager.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -82,6 +84,8 @@ namespace CoffeeShop
             // bt_Staff
             // 
             this.bt_Staff.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_Staff.FlatAppearance.BorderSize = 2;
+            this.bt_Staff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.bt_Staff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Staff.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Staff.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -111,7 +115,10 @@ namespace CoffeeShop
             // 
             // btsignout
             // 
-            this.btsignout.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btsignout.BackColor = System.Drawing.Color.Transparent;
+            this.btsignout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btsignout.FlatAppearance.BorderSize = 2;
+            this.btsignout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btsignout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btsignout.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btsignout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -120,13 +127,15 @@ namespace CoffeeShop
             this.btsignout.Size = new System.Drawing.Size(155, 48);
             this.btsignout.TabIndex = 5;
             this.btsignout.Text = "Đăng xuất";
-            this.btsignout.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btsignout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btsignout.UseVisualStyleBackColor = false;
             this.btsignout.Click += new System.EventHandler(this.btsignout_Click);
             // 
             // bt_Income
             // 
             this.bt_Income.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_Income.FlatAppearance.BorderSize = 2;
+            this.bt_Income.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.bt_Income.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Income.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Income.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -142,6 +151,8 @@ namespace CoffeeShop
             // bt_Customer
             // 
             this.bt_Customer.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_Customer.FlatAppearance.BorderSize = 2;
+            this.bt_Customer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.bt_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Customer.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Customer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -157,6 +168,8 @@ namespace CoffeeShop
             // bt_Checking
             // 
             this.bt_Checking.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_Checking.FlatAppearance.BorderSize = 2;
+            this.bt_Checking.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.bt_Checking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Checking.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Checking.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -199,6 +212,7 @@ namespace CoffeeShop
             // tbDes
             // 
             this.tbDes.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbDes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDes.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tbDes.Location = new System.Drawing.Point(285, 181);
@@ -245,10 +259,12 @@ namespace CoffeeShop
             // bt_Refresh
             // 
             this.bt_Refresh.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_Refresh.FlatAppearance.BorderSize = 2;
+            this.bt_Refresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.bt_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Refresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.bt_Refresh.Location = new System.Drawing.Point(780, 12);
+            this.bt_Refresh.Location = new System.Drawing.Point(990, 10);
             this.bt_Refresh.Name = "bt_Refresh";
             this.bt_Refresh.Size = new System.Drawing.Size(121, 47);
             this.bt_Refresh.TabIndex = 14;
@@ -259,6 +275,8 @@ namespace CoffeeShop
             // bt_Find
             // 
             this.bt_Find.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_Find.FlatAppearance.BorderSize = 2;
+            this.bt_Find.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.bt_Find.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Find.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Find.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -273,12 +291,14 @@ namespace CoffeeShop
             // bt_Reset
             // 
             this.bt_Reset.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_Reset.FlatAppearance.BorderSize = 2;
+            this.bt_Reset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.bt_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Reset.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.bt_Reset.Location = new System.Drawing.Point(956, 216);
+            this.bt_Reset.Location = new System.Drawing.Point(729, 274);
             this.bt_Reset.Name = "bt_Reset";
-            this.bt_Reset.Size = new System.Drawing.Size(143, 73);
+            this.bt_Reset.Size = new System.Drawing.Size(91, 46);
             this.bt_Reset.TabIndex = 12;
             this.bt_Reset.Text = "Reset";
             this.bt_Reset.UseVisualStyleBackColor = false;
@@ -287,12 +307,14 @@ namespace CoffeeShop
             // bt_Remove
             // 
             this.bt_Remove.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_Remove.FlatAppearance.BorderSize = 2;
+            this.bt_Remove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.bt_Remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Remove.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.bt_Remove.Location = new System.Drawing.Point(956, 618);
+            this.bt_Remove.Location = new System.Drawing.Point(878, 274);
             this.bt_Remove.Name = "bt_Remove";
-            this.bt_Remove.Size = new System.Drawing.Size(143, 46);
+            this.bt_Remove.Size = new System.Drawing.Size(91, 46);
             this.bt_Remove.TabIndex = 11;
             this.bt_Remove.Text = "Xóa";
             this.bt_Remove.UseVisualStyleBackColor = false;
@@ -307,7 +329,7 @@ namespace CoffeeShop
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(370, 285);
+            this.dataGridView1.Size = new System.Drawing.Size(370, 355);
             this.dataGridView1.TabIndex = 10;
             // 
             // tb_Amount
@@ -315,8 +337,9 @@ namespace CoffeeShop
             this.tb_Amount.BackColor = System.Drawing.Color.Red;
             this.tb_Amount.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Amount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tb_Amount.Location = new System.Drawing.Point(718, 211);
+            this.tb_Amount.Location = new System.Drawing.Point(1010, 242);
             this.tb_Amount.Name = "tb_Amount";
+            this.tb_Amount.ReadOnly = true;
             this.tb_Amount.Size = new System.Drawing.Size(26, 23);
             this.tb_Amount.TabIndex = 9;
             // 
@@ -324,7 +347,10 @@ namespace CoffeeShop
             // 
             this.bt_SCart.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_SCart.BackgroundImage")));
             this.bt_SCart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bt_SCart.Location = new System.Drawing.Point(729, 216);
+            this.bt_SCart.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bt_SCart.FlatAppearance.BorderSize = 2;
+            this.bt_SCart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.bt_SCart.Location = new System.Drawing.Point(1021, 247);
             this.bt_SCart.Name = "bt_SCart";
             this.bt_SCart.Size = new System.Drawing.Size(78, 73);
             this.bt_SCart.TabIndex = 8;
@@ -350,7 +376,7 @@ namespace CoffeeShop
             this.pn_Menu_dataGridView1.Name = "pn_Menu_dataGridView1";
             this.pn_Menu_dataGridView1.RowHeadersWidth = 51;
             this.pn_Menu_dataGridView1.RowTemplate.Height = 24;
-            this.pn_Menu_dataGridView1.Size = new System.Drawing.Size(599, 285);
+            this.pn_Menu_dataGridView1.Size = new System.Drawing.Size(599, 355);
             this.pn_Menu_dataGridView1.TabIndex = 1;
             this.pn_Menu_dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pn_Menu_dataGridView1_CellContentDoubleClick);
             // 
