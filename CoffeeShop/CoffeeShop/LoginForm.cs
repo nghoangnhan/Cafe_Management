@@ -86,14 +86,12 @@ namespace CoffeeShop
 
         private void btSignin_MouseLeave(object sender, EventArgs e)
         {
-            btSignin.BackColor = Color.Transparent;
-            btSignin.ForeColor = Color.Transparent;
+
         }
 
         private void btSignin_MouseEnter(object sender, EventArgs e)
         {
-            btSignin.BackColor = Color.White;
-            btSignin.ForeColor = Color.Black;
+
         }
     }
 }

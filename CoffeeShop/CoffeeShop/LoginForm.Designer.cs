@@ -40,13 +40,15 @@
             // 
             // btSignin
             // 
-            this.btSignin.BackColor = System.Drawing.Color.Transparent;
+            this.btSignin.BackColor = System.Drawing.Color.White;
+            this.btSignin.FlatAppearance.BorderSize = 2;
+            this.btSignin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.btSignin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSignin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSignin.ForeColor = System.Drawing.Color.Transparent;
-            this.btSignin.Location = new System.Drawing.Point(51, 272);
+            this.btSignin.ForeColor = System.Drawing.Color.Black;
+            this.btSignin.Location = new System.Drawing.Point(154, 266);
             this.btSignin.Name = "btSignin";
-            this.btSignin.Size = new System.Drawing.Size(376, 48);
+            this.btSignin.Size = new System.Drawing.Size(191, 48);
             this.btSignin.TabIndex = 1;
             this.btSignin.Text = "Đăng nhập";
             this.btSignin.UseVisualStyleBackColor = false;
@@ -60,7 +62,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Transparent;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(47, 46);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(165, 25);
@@ -72,7 +74,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(47, 135);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 25);
@@ -84,9 +86,9 @@
             this.tb_Username.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tb_Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Username.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tb_Username.Location = new System.Drawing.Point(236, 46);
+            this.tb_Username.Location = new System.Drawing.Point(218, 46);
             this.tb_Username.Name = "tb_Username";
-            this.tb_Username.Size = new System.Drawing.Size(191, 30);
+            this.tb_Username.Size = new System.Drawing.Size(252, 30);
             this.tb_Username.TabIndex = 8;
             // 
             // tb_Password
@@ -94,9 +96,9 @@
             this.tb_Password.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tb_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Password.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tb_Password.Location = new System.Drawing.Point(236, 130);
+            this.tb_Password.Location = new System.Drawing.Point(218, 130);
             this.tb_Password.Name = "tb_Password";
-            this.tb_Password.Size = new System.Drawing.Size(191, 30);
+            this.tb_Password.Size = new System.Drawing.Size(252, 30);
             this.tb_Password.TabIndex = 9;
             // 
             // rb_Manager
@@ -104,8 +106,8 @@
             this.rb_Manager.AutoSize = true;
             this.rb_Manager.BackColor = System.Drawing.Color.Transparent;
             this.rb_Manager.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_Manager.ForeColor = System.Drawing.Color.Transparent;
-            this.rb_Manager.Location = new System.Drawing.Point(51, 206);
+            this.rb_Manager.ForeColor = System.Drawing.Color.Black;
+            this.rb_Manager.Location = new System.Drawing.Point(104, 206);
             this.rb_Manager.Name = "rb_Manager";
             this.rb_Manager.Size = new System.Drawing.Size(108, 29);
             this.rb_Manager.TabIndex = 10;
@@ -118,8 +120,8 @@
             this.rb_Employee.AutoSize = true;
             this.rb_Employee.BackColor = System.Drawing.Color.Transparent;
             this.rb_Employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_Employee.ForeColor = System.Drawing.Color.Transparent;
-            this.rb_Employee.Location = new System.Drawing.Point(321, 206);
+            this.rb_Employee.ForeColor = System.Drawing.Color.Black;
+            this.rb_Employee.Location = new System.Drawing.Point(284, 206);
             this.rb_Employee.Name = "rb_Employee";
             this.rb_Employee.Size = new System.Drawing.Size(130, 29);
             this.rb_Employee.TabIndex = 11;
@@ -131,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CoffeeShop.Properties.Resources.Logo_New;
+            this.BackgroundImage = global::CoffeeShop.Properties.Resources.backgroundHomePage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(531, 382);
             this.Controls.Add(this.rb_Employee);

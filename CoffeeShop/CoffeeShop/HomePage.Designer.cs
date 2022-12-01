@@ -100,8 +100,7 @@ namespace CoffeeShop
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.btsignout);
             this.panel1.Controls.Add(this.bt_Income);
             this.panel1.Controls.Add(this.bt_Customer);
@@ -115,7 +114,7 @@ namespace CoffeeShop
             // 
             // btsignout
             // 
-            this.btsignout.BackColor = System.Drawing.Color.Transparent;
+            this.btsignout.BackColor = System.Drawing.Color.White;
             this.btsignout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btsignout.FlatAppearance.BorderSize = 2;
             this.btsignout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -184,7 +183,7 @@ namespace CoffeeShop
             // 
             // panel_Menu
             // 
-            this.panel_Menu.BackColor = System.Drawing.SystemColors.Control;
+            this.panel_Menu.BackColor = System.Drawing.Color.Transparent;
             this.panel_Menu.Controls.Add(this.tbDes);
             this.panel_Menu.Controls.Add(this.label7);
             this.panel_Menu.Controls.Add(this.comboBox1);
@@ -427,7 +426,7 @@ namespace CoffeeShop
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BackgroundImage = global::CoffeeShop.Properties.Resources.Logo_New;
+            this.BackgroundImage = global::CoffeeShop.Properties.Resources.backgroundHomePage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1292, 693);
             this.Controls.Add(this.panel_Menu);
