@@ -133,7 +133,7 @@ namespace CoffeeShop
                         saveFileDialog1.FileName = ".docx";
                         if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                         {
-                            word.exportDataToWord(dataGridView1, "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM", "Độc lập - Tự do - Hạnh phúc", "Total Course: " + dataGridView1.Rows.Count.ToString(), saveFileDialog1.FileName);
+                            word.exportDataToWord(dataGridView1, "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM", "Độc lập - Tự do - Hạnh phúc", "Tổng số hóa đơn: " + dataGridView1.Rows.Count.ToString(), saveFileDialog1.FileName);
                         }
                     }
                     catch

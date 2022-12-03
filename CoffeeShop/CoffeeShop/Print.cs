@@ -20,7 +20,7 @@ namespace CoffeeShop
         {
 
             #region one
-            string fileName = "Báo cáo thu chi.docx";
+            string fileName = "Baocaothuchi.docx";
             var doc = DocX.Create(fileName);
             #endregion
 
