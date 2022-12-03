@@ -53,22 +53,6 @@ namespace CoffeeShop
             tb_Amount.Show();
             bt_Remove.Show();
         }
-        private DataTable GetItem()
-        {
-            SqlCommand command = new SqlCommand("SELECT * FROM Item", DB.Instance.getConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
-        }
-        private DataTable GetOrder()
-        {
-            SqlCommand command = new SqlCommand("SELECT * FROM Order_Item", DB.Instance.getConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
-        }
         public int checkItem(DataTable table, string name, int quan)
         {
             quan = 1;
@@ -105,7 +89,7 @@ namespace CoffeeShop
             pn_Menu_dataGridView1.AllowUserToAddRows = false;
             pn_Menu_dataGridView1.ReadOnly = true;
             dataGridView1.ReadOnly = true;
-            SqlCommand command = new SqlCommand("SELECT E_ID,E_Name FROM Employees WHERE E_Position='Cashier'", DB.Instance.getConnection);
+            SqlCommand command = new SqlCommand("SELECT E_ID,E_Name FROM Employees WHERE E_Position='Thu ngân'", DB.Instance.getConnection);
 
             comboBox1.DataSource = EmployeeDAO.Instance.GetEmployee(command);
             comboBox1.DisplayMember = "E_Name";

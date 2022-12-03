@@ -37,6 +37,8 @@ namespace CoffeeShop
             this.bt_Previous = new System.Windows.Forms.Button();
             this.lb_Total = new System.Windows.Forms.Label();
             this.bt_Checkmonth = new System.Windows.Forms.Button();
+            this.btprintBill = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,12 +133,28 @@ namespace CoffeeShop
             this.bt_Checkmonth.UseVisualStyleBackColor = false;
             this.bt_Checkmonth.Click += new System.EventHandler(this.bt_Checkmonth_Click);
             // 
+            // btprintBill
+            // 
+            this.btprintBill.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btprintBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btprintBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btprintBill.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btprintBill.Location = new System.Drawing.Point(964, 634);
+            this.btprintBill.Margin = new System.Windows.Forms.Padding(4);
+            this.btprintBill.Name = "btprintBill";
+            this.btprintBill.Size = new System.Drawing.Size(289, 50);
+            this.btprintBill.TabIndex = 7;
+            this.btprintBill.Text = "In báo cáo thu chi";
+            this.btprintBill.UseVisualStyleBackColor = false;
+            this.btprintBill.Click += new System.EventHandler(this.btprintBill_Click);
+            // 
             // IncomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1288, 762);
+            this.Controls.Add(this.btprintBill);
             this.Controls.Add(this.bt_Checkmonth);
             this.Controls.Add(this.lb_Total);
             this.Controls.Add(this.bt_Previous);
@@ -168,5 +186,7 @@ namespace CoffeeShop
         private System.Windows.Forms.Button bt_Previous;
         private System.Windows.Forms.Label lb_Total;
         private System.Windows.Forms.Button bt_Checkmonth;
+        private System.Windows.Forms.Button btprintBill;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

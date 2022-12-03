@@ -119,5 +119,37 @@ namespace CoffeeShop
         {
             HomePage.homepage.Show();
         }
+
+        private void btprintBill_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Print word = new Print();
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    try
+                    {
+                        saveFileDialog1.Filter = "Word Documents (.docx)|.docx";
+                        saveFileDialog1.FileName = ".docx";
+                        if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                        {
+                            word.exportDataToWord(dataGridView1, "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM", "Độc lập - Tự do - Hạnh phúc", "Total Course: " + dataGridView1.Rows.Count.ToString(), saveFileDialog1.FileName);
+                        }
+                    }
+                    catch
+                    {
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No Record To Export !!!", "Notification");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+        }
     }
 }
