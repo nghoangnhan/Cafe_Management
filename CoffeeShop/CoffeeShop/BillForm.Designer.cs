@@ -59,6 +59,7 @@ namespace CoffeeShop
             // tb_cashin
             // 
             this.tb_cashin.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tb_cashin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_cashin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_cashin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tb_cashin.Location = new System.Drawing.Point(591, 7);
@@ -91,6 +92,7 @@ namespace CoffeeShop
             // tb_Cashback
             // 
             this.tb_Cashback.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tb_Cashback.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_Cashback.Enabled = false;
             this.tb_Cashback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Cashback.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -102,6 +104,8 @@ namespace CoffeeShop
             // bt_Done
             // 
             this.bt_Done.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_Done.FlatAppearance.BorderSize = 2;
+            this.bt_Done.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.bt_Done.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Done.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Done.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;

@@ -153,6 +153,7 @@ namespace CoffeeShop
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackgroundImage = global::CoffeeShop.Properties.Resources.backgroundHomePage;
             this.ClientSize = new System.Drawing.Size(1288, 762);
             this.Controls.Add(this.btprintBill);
             this.Controls.Add(this.bt_Checkmonth);

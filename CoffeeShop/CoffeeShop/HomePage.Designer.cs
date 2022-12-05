@@ -359,6 +359,7 @@ namespace CoffeeShop
             // tb_Phone
             // 
             this.tb_Phone.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tb_Phone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_Phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Phone.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tb_Phone.Location = new System.Drawing.Point(285, 21);
@@ -382,6 +383,7 @@ namespace CoffeeShop
             // tb_CusName
             // 
             this.tb_CusName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tb_CusName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_CusName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_CusName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tb_CusName.Location = new System.Drawing.Point(285, 71);

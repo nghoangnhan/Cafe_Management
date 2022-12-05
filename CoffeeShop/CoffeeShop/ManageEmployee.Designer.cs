@@ -95,6 +95,8 @@ namespace CoffeeShop
             // btdismiss
             // 
             this.btdismiss.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btdismiss.FlatAppearance.BorderSize = 2;
+            this.btdismiss.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btdismiss.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btdismiss.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btdismiss.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -109,6 +111,8 @@ namespace CoffeeShop
             // btadd
             // 
             this.btadd.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btadd.FlatAppearance.BorderSize = 2;
+            this.btadd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.btadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btadd.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btadd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -123,6 +127,8 @@ namespace CoffeeShop
             // btfind
             // 
             this.btfind.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btfind.FlatAppearance.BorderSize = 2;
+            this.btfind.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.btfind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btfind.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btfind.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -159,6 +165,8 @@ namespace CoffeeShop
             // btedit
             // 
             this.btedit.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btedit.FlatAppearance.BorderSize = 2;
+            this.btedit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.btedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btedit.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btedit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -173,6 +181,7 @@ namespace CoffeeShop
             // tbsalary
             // 
             this.tbsalary.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbsalary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbsalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbsalary.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tbsalary.Location = new System.Drawing.Point(195, 288);
@@ -194,6 +203,7 @@ namespace CoffeeShop
             // tbaddress
             // 
             this.tbaddress.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbaddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbaddress.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tbaddress.Location = new System.Drawing.Point(195, 178);
@@ -216,6 +226,7 @@ namespace CoffeeShop
             // tbphone
             // 
             this.tbphone.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbphone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbphone.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tbphone.Location = new System.Drawing.Point(195, 129);
@@ -237,6 +248,7 @@ namespace CoffeeShop
             // tbname
             // 
             this.tbname.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbname.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tbname.Location = new System.Drawing.Point(195, 71);
@@ -258,6 +270,7 @@ namespace CoffeeShop
             // tbid
             // 
             this.tbid.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbid.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tbid.Location = new System.Drawing.Point(195, 12);

@@ -97,6 +97,7 @@ namespace CoffeeShop
             // tb_Cname
             // 
             this.tb_Cname.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tb_Cname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_Cname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Cname.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tb_Cname.Location = new System.Drawing.Point(327, 210);
@@ -108,6 +109,7 @@ namespace CoffeeShop
             // tb_Address
             // 
             this.tb_Address.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tb_Address.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Address.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tb_Address.Location = new System.Drawing.Point(327, 264);
@@ -121,6 +123,7 @@ namespace CoffeeShop
             // tb_TotalPay
             // 
             this.tb_TotalPay.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tb_TotalPay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_TotalPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_TotalPay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tb_TotalPay.Location = new System.Drawing.Point(327, 447);
@@ -132,6 +135,7 @@ namespace CoffeeShop
             // tb_Phone
             // 
             this.tb_Phone.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tb_Phone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_Phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Phone.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tb_Phone.Location = new System.Drawing.Point(327, 370);
@@ -143,6 +147,8 @@ namespace CoffeeShop
             // bt_Search
             // 
             this.bt_Search.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_Search.FlatAppearance.BorderSize = 2;
+            this.bt_Search.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.bt_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Search.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -158,6 +164,8 @@ namespace CoffeeShop
             // bt_Create
             // 
             this.bt_Create.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_Create.FlatAppearance.BorderSize = 2;
+            this.bt_Create.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.bt_Create.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Create.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Create.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -173,6 +181,7 @@ namespace CoffeeShop
             // tb_Search
             // 
             this.tb_Search.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tb_Search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Search.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tb_Search.Location = new System.Drawing.Point(327, 21);
@@ -209,6 +218,8 @@ namespace CoffeeShop
             // btdel
             // 
             this.btdel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btdel.FlatAppearance.BorderSize = 2;
+            this.btdel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.btdel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btdel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -224,6 +235,7 @@ namespace CoffeeShop
             // tbC_ID
             // 
             this.tbC_ID.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbC_ID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbC_ID.Enabled = false;
             this.tbC_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbC_ID.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;

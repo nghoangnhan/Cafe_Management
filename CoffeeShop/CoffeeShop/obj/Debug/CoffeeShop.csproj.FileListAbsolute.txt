@@ -134,3 +134,8 @@ D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\bin\Debug\Xceed.Words.NE
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\bin\Debug\BouncyCastle.Crypto.dll
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\bin\Debug\itextsharp.dll
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\bin\Debug\itextsharp.xml
+D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\bin\Debug\BouncyCastle.Crypto.dll
+D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\bin\Debug\itextsharp.dll
+D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\bin\Debug\Xceed.Document.NET.dll
+D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\bin\Debug\Xceed.Words.NET.dll
+D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\bin\Debug\itextsharp.xml
