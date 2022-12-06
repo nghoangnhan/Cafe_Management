@@ -1,7 +1,7 @@
 ﻿
 namespace CoffeeShop
 {
-    partial class ManageEmployee
+    partial class ManageEmployeeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace CoffeeShop
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageEmployee));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageEmployeeForm));
             this.pnwaiter = new System.Windows.Forms.Panel();
             this.cbposi = new System.Windows.Forms.ComboBox();
             this.btdismiss = new System.Windows.Forms.Button();
@@ -74,7 +74,6 @@ namespace CoffeeShop
             this.pnwaiter.Name = "pnwaiter";
             this.pnwaiter.Size = new System.Drawing.Size(521, 516);
             this.pnwaiter.TabIndex = 18;
-            this.pnwaiter.Paint += new System.Windows.Forms.PaintEventHandler(this.pnwaiter_Paint);
             // 
             // cbposi
             // 
@@ -290,7 +289,6 @@ namespace CoffeeShop
             this.Name = "ManageEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhân viên";
-            this.Load += new System.EventHandler(this.Edit_Load);
             this.pnwaiter.ResumeLayout(false);
             this.pnwaiter.PerformLayout();
             this.ResumeLayout(false);

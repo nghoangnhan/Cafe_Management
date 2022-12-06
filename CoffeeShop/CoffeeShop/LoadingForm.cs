@@ -30,11 +30,6 @@ namespace CoffeeShop
             }
             private set => loadingForm = value;
         }
-
-        private void LoadingForm_Load(object sender, EventArgs e)
-        {
-        }
-
         private void timer2_Tick(object sender, EventArgs e)
         {
             try
@@ -48,14 +43,13 @@ namespace CoffeeShop
                 {
                     timer2.Stop();
                     Hide();
-                    HomePage.homepage.Show();
+                    HomePageForm.homepage.Show();
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Lỗi!");
+                MessageBox.Show("Lỗi tải dữ liệu", "Loading", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
     }
 }

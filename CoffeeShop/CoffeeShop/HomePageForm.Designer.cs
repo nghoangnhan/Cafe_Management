@@ -1,7 +1,7 @@
 ﻿
 namespace CoffeeShop
 {
-    partial class HomePage
+    partial class HomePageForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace CoffeeShop
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePageForm));
             this.bt_Manager = new System.Windows.Forms.Button();
             this.bt_Staff = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();

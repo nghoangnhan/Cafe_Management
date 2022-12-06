@@ -81,7 +81,6 @@ namespace CoffeeShop
             this.label4.Size = new System.Drawing.Size(85, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "Địa chỉ:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -118,7 +117,6 @@ namespace CoffeeShop
             this.tb_Address.Name = "tb_Address";
             this.tb_Address.Size = new System.Drawing.Size(218, 88);
             this.tb_Address.TabIndex = 7;
-            this.tb_Address.TextChanged += new System.EventHandler(this.tb_Address_TextChanged);
             // 
             // tb_TotalPay
             // 

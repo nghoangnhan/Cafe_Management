@@ -105,17 +105,17 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageEmployee.cs">
+    <Compile Include="ManageEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageEmployee.Designer.cs">
-      <DependentUpon>ManageEmployee.cs</DependentUpon>
+    <Compile Include="ManageEmployeeForm.Designer.cs">
+      <DependentUpon>ManageEmployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditItemForm.cs">
+    <Compile Include="ManageItemForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditItemForm.Designer.cs">
-      <DependentUpon>EditItemForm.cs</DependentUpon>
+    <Compile Include="ManageItemForm.Designer.cs">
+      <DependentUpon>ManageItemForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CheckingForm.cs">
       <SubType>Form</SubType>
@@ -123,11 +123,11 @@
     <Compile Include="CheckingForm.Designer.cs">
       <DependentUpon>CheckingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomePage.cs">
+    <Compile Include="HomePageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomePage.Designer.cs">
-      <DependentUpon>HomePage.cs</DependentUpon>
+    <Compile Include="HomePageForm.Designer.cs">
+      <DependentUpon>HomePageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="IncomeForm.cs">
       <SubType>Form</SubType>
@@ -135,11 +135,11 @@
     <Compile Include="IncomeForm.Designer.cs">
       <DependentUpon>IncomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager.cs">
+    <Compile Include="ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Manager.Designer.cs">
-      <DependentUpon>Manager.cs</DependentUpon>
+    <Compile Include="ManagerForm.Designer.cs">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Print.cs" />
     <Compile Include="Program.cs" />
@@ -156,23 +156,23 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageEmployee.resx">
-      <DependentUpon>ManageEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="ManageEmployeeForm.resx">
+      <DependentUpon>ManageEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditItemForm.resx">
-      <DependentUpon>EditItemForm.cs</DependentUpon>
+    <EmbeddedResource Include="ManageItemForm.resx">
+      <DependentUpon>ManageItemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CheckingForm.resx">
       <DependentUpon>CheckingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomePage.resx">
-      <DependentUpon>HomePage.cs</DependentUpon>
+    <EmbeddedResource Include="HomePageForm.resx">
+      <DependentUpon>HomePageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IncomeForm.resx">
       <DependentUpon>IncomeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Manager.resx">
-      <DependentUpon>Manager.cs</DependentUpon>
+    <EmbeddedResource Include="ManagerForm.resx">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

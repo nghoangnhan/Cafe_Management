@@ -30,12 +30,6 @@ namespace CoffeeShop
         {
             InitializeComponent();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void Bill_Load(object sender, EventArgs e)
         {
             try
@@ -73,12 +67,12 @@ namespace CoffeeShop
                         listBox_Bill.Items.Add("Giá đã giảm: " + total);
                     }
                 }
-                listBox_Bill.Items.Add("Thu ngân: " + HomePage.homepage.comboBox1.Text);
+                listBox_Bill.Items.Add("Thu ngân: " + HomePageForm.homepage.comboBox1.Text);
                 listBox_Bill.Items.Add("Mô tả: " + bill.Description);
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show("Lỗi tải hóa đơn", "Hóa đơn",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -96,9 +90,9 @@ namespace CoffeeShop
                     tb_Cashback.Text = (cashin - total).ToString();
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message, "Lỗi");
+                MessageBox.Show("Lỗi tính tiền", "Hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -137,9 +131,9 @@ namespace CoffeeShop
                 picboxqr.Image = bitmap;
                 picboxqr.Show();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Lỗi mã QR", "Hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -161,15 +155,14 @@ namespace CoffeeShop
                 picboxqr.Image = bitmap;
                 picboxqr.Show();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Lỗi mã QR", "Hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void BillForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            HomePage.homepage.Show();
+            HomePageForm.homepage.Show();
         }
     }
 }

@@ -20,104 +20,136 @@ namespace CoffeeShop
 
         private void bt_Next_Click(object sender, EventArgs e)
         {
-            DateTime nextday = dateTimePicker1.Value.AddDays(1);
-            dateTimePicker1.Value = nextday;
-
-            SqlCommand command = new SqlCommand("SELECT B_Num[Số hóa đơn], O_Num[Số Order], E_ID[Mã nhân viên], C_ID[Mã khách hàng], B_Date[Ngày in hóa đơn], B_Total[Tổng hóa đơn], B_Description[Mô tả hóa đơn] FROM BILL WHERE B_Date = @bdate", DB.Instance.getConnection);
-            command.Parameters.Add("@bdate", SqlDbType.Date).Value = (DateTime)dateTimePicker1.Value;
-
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
-
-            int total = 0;
-            for (int i = 0; i < table.Rows.Count; i++)
+            try
             {
-                total += Convert.ToInt32(table.Rows[i]["B_Total"]);
+                DateTime nextday = dateTimePicker1.Value.AddDays(1);
+                dateTimePicker1.Value = nextday;
+
+                SqlCommand command = new SqlCommand("SELECT B_Num[Số hóa đơn], O_Num[Số Order], E_ID[Mã nhân viên], C_ID[Mã khách hàng], B_Date[Ngày in hóa đơn], B_Total[Tổng hóa đơn], B_Description[Mô tả hóa đơn] FROM BILL WHERE B_Date = @bdate", DB.Instance.getConnection);
+                command.Parameters.Add("@bdate", SqlDbType.Date).Value = (DateTime)dateTimePicker1.Value;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                dataGridView1.DataSource = table;
+
+                int total = 0;
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    total += Convert.ToInt32(table.Rows[i]["B_Total"]);
+                }
+                lb_Total.Text = "Tổng: " + total.ToString() + " VND";
             }
-            lb_Total.Text = "Tổng: " + total.ToString() + " VND";
-
-
+            catch
+            {
+                MessageBox.Show("Lỗi tải dữ liệu", "Thu nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void bt_Previous_Click(object sender, EventArgs e)
         {
-            DateTime previousday = dateTimePicker1.Value.AddDays(-1);
-            dateTimePicker1.Value = previousday;
-
-            SqlCommand command = new SqlCommand("SELECT B_Num[Số hóa đơn], O_Num[Số Order], E_ID[Mã nhân viên], C_ID[Mã khách hàng], B_Date[Ngày in hóa đơn], B_Total[Tổng hóa đơn], B_Description[Mô tả hóa đơn] FROM BILL WHERE B_Date = @bdate", DB.Instance.getConnection);
-            command.Parameters.Add("@bdate", SqlDbType.Date).Value = (DateTime)dateTimePicker1.Value;
-
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
-
-            int total = 0;
-            for (int i = 0; i < table.Rows.Count; i++)
+            try
             {
-                total += Convert.ToInt32(table.Rows[i]["B_Total"]);
-            }
-            lb_Total.Text = "Tổng: " + total.ToString() + " VND";
+                DateTime previousday = dateTimePicker1.Value.AddDays(-1);
+                dateTimePicker1.Value = previousday;
 
+                SqlCommand command = new SqlCommand("SELECT B_Num[Số hóa đơn], O_Num[Số Order], E_ID[Mã nhân viên], C_ID[Mã khách hàng], B_Date[Ngày in hóa đơn], B_Total[Tổng hóa đơn], B_Description[Mô tả hóa đơn] FROM BILL WHERE B_Date = @bdate", DB.Instance.getConnection);
+                command.Parameters.Add("@bdate", SqlDbType.Date).Value = (DateTime)dateTimePicker1.Value;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                dataGridView1.DataSource = table;
+
+                int total = 0;
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    total += Convert.ToInt32(table.Rows[i]["B_Total"]);
+                }
+                lb_Total.Text = "Tổng: " + total.ToString() + " VND";
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi tải dữ liệu", "Thu nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void bt_Check_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand("SELECT B_Num[Số hóa đơn], O_Num[Số Order], E_ID[Mã nhân viên], C_ID[Mã khách hàng], B_Date[Ngày in hóa đơn], B_Total[Tổng hóa đơn], B_Description[Mô tả hóa đơn] FROM Bill WHERE DAY(B_Date) = DAY(@bdate) AND MONTH (B_Date) = MONTH (@bdate)", DB.Instance.getConnection);
-            command.Parameters.Add("@bdate", SqlDbType.Date).Value = (DateTime)dateTimePicker1.Value;
-
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
-
-            int total = 0;
-            for(int i = 0; i < table.Rows.Count; i ++)
+            try
             {
-                total += Convert.ToInt32(table.Rows[i]["Tổng hóa đơn"]);
+                SqlCommand command = new SqlCommand("SELECT B_Num[Số hóa đơn], O_Num[Số Order], E_ID[Mã nhân viên], C_ID[Mã khách hàng], B_Date[Ngày in hóa đơn], B_Total[Tổng hóa đơn], B_Description[Mô tả hóa đơn] FROM Bill WHERE DAY(B_Date) = DAY(@bdate) AND MONTH (B_Date) = MONTH (@bdate)", DB.Instance.getConnection);
+                command.Parameters.Add("@bdate", SqlDbType.Date).Value = (DateTime)dateTimePicker1.Value;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                dataGridView1.DataSource = table;
+
+                int total = 0;
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    total += Convert.ToInt32(table.Rows[i]["Tổng hóa đơn"]);
+                }
+                lb_Total.Text = "Tổng: " + total.ToString() + " VND";
+                dataGridView1.AllowUserToAddRows = false;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
-            lb_Total.Text = "Tổng: " + total.ToString() + " VND";
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            catch
+            {
+                MessageBox.Show("Lỗi tải dữ liệu", "Thu nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void bt_Checkmonth_Click(object sender, EventArgs e)
         {
-            DateTime day = dateTimePicker1.Value;
-            SqlCommand command = new SqlCommand("SELECT B_Num[Số hóa đơn], O_Num[Số Order], E_ID[Mã nhân viên], C_ID[Mã khách hàng], B_Date[Ngày in hóa đơn], B_Total[Tổng hóa đơn], B_Description[Mô tả hóa đơn] FROM BILL WHERE Month(B_Date) = Month(@bdate)", DB.Instance.getConnection);
-            command.Parameters.Add("@bdate", SqlDbType.Date).Value = (DateTime)dateTimePicker1.Value;
-
-
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-
-            int total = 0;
-            for (int i = 0; i < table.Rows.Count; i++)
+            try
             {
-                total += Convert.ToInt32(table.Rows[i]["Tổng hóa đơn"]);
+                DateTime day = dateTimePicker1.Value;
+                SqlCommand command = new SqlCommand("SELECT B_Num[Số hóa đơn], O_Num[Số Order], E_ID[Mã nhân viên], C_ID[Mã khách hàng], B_Date[Ngày in hóa đơn], B_Total[Tổng hóa đơn], B_Description[Mô tả hóa đơn] FROM BILL WHERE Month(B_Date) = Month(@bdate)", DB.Instance.getConnection);
+                command.Parameters.Add("@bdate", SqlDbType.Date).Value = (DateTime)dateTimePicker1.Value;
+
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                int total = 0;
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    total += Convert.ToInt32(table.Rows[i]["Tổng hóa đơn"]);
+                }
+                dataGridView1.DataSource = table;
+                lb_Total.Text = "Tổng: " + total.ToString() + " VND";
+                dataGridView1.AllowUserToAddRows = false;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
-            dataGridView1.DataSource = table;
-            lb_Total.Text = "Tổng: " + total.ToString() + " VND";
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            catch
+            {
+                MessageBox.Show("Lỗi tải dữ liệu", "Thu nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void IncomeForm_Load(object sender, EventArgs e)
         {
-            dataGridView1.ReadOnly = true;
+            try
+            {
+                dataGridView1.ReadOnly = true;
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi tải dữ liệu", "Thu nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btclose_Click(object sender, EventArgs e)
         {
             Close();
-            HomePage hp = new HomePage();
+            HomePageForm hp = new HomePageForm();
             hp.Show();
         }
         private void IncomeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            HomePage.homepage.Show();
+            HomePageForm.homepage.Show();
         }
 
         private void btprintBill_Click(object sender, EventArgs e)
@@ -142,14 +174,13 @@ namespace CoffeeShop
                 }
                 else
                 {
-                    MessageBox.Show("No Record To Export !!!", "Notification");
+                    MessageBox.Show("Dữ liệu trống !!!", "Thông báo");
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Lỗi tải dữ liệu", "Thu nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
     }
 }

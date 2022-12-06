@@ -1,7 +1,7 @@
 ﻿
 namespace CoffeeShop
 {
-    partial class Manager
+    partial class ManagerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,13 @@ namespace CoffeeShop
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manager));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm));
             this.btrefresh = new System.Windows.Forms.Button();
             this.gridcashier = new System.Windows.Forms.DataGridView();
             this.Manage_Toolstrip = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.gridcashier)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btrefresh
@@ -94,7 +93,7 @@ namespace CoffeeShop
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(13, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1262, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(1262, 24);
             this.menuStrip1.TabIndex = 29;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -113,12 +112,10 @@ namespace CoffeeShop
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Manager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản lý sản phẩm";
+            this.Text = "Quản lý";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Manager_FormClosed);
             this.Load += new System.EventHandler(this.Manager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridcashier)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

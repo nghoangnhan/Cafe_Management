@@ -53,9 +53,6 @@
             this.btSignin.Text = "Đăng nhập";
             this.btSignin.UseVisualStyleBackColor = false;
             this.btSignin.Click += new System.EventHandler(this.btSignin_Click);
-            this.btSignin.MouseEnter += new System.EventHandler(this.btSignin_MouseEnter);
-            this.btSignin.MouseLeave += new System.EventHandler(this.btSignin_MouseLeave);
-            this.btSignin.MouseHover += new System.EventHandler(this.btSignin_MouseHover);
             // 
             // label4
             // 
@@ -147,7 +144,6 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

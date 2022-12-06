@@ -31,67 +31,53 @@ namespace CoffeeShop
         }
         private void btSignin_Click(object sender, EventArgs e)
         {
-            if (rb_Manager.Checked == true)
+            try
             {
-                if (AccountDAO.Instance.signIn(tb_Username.Text, tb_Password.Text, "manager"))
+                if (rb_Manager.Checked == true)
                 {
-                    tb_Username.Clear();
-                    tb_Password.Clear();
-                    HomePage.homepage.bt_Income.Enabled = true;
-                    HomePage.homepage.bt_Manager.Enabled = true;
-                    LoadingForm.loadingform.progressBar1.Value = 0;
-                    LoadingForm.loadingform.Show();
-                    LoadingForm.loadingform.timer2.Start();
-                    Hide();
+                    if (AccountDAO.Instance.signIn(tb_Username.Text, tb_Password.Text, "manager"))
+                    {
+                        tb_Username.Clear();
+                        tb_Password.Clear();
+                        HomePageForm.homepage.bt_Income.Enabled = true;
+                        HomePageForm.homepage.bt_Manager.Enabled = true;
+                        LoadingForm.loadingform.progressBar1.Value = 0;
+                        LoadingForm.loadingform.Show();
+                        LoadingForm.loadingform.timer2.Start();
+                        Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đăng nhập thất bại, sai tên đăng nhập hoặc mật khẩu!", "Đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else if (rb_Employee.Checked == true)
+                {
+                    if (AccountDAO.Instance.signIn(tb_Password.Text, tb_Password.Text, "employee"))
+                    {
+                        tb_Username.Clear();
+                        tb_Password.Clear();
+                        HomePageForm.homepage.bt_Income.Enabled = false;
+                        HomePageForm.homepage.bt_Manager.Enabled = false;
+                        LoadingForm.loadingform.progressBar1.Value = 0;
+                        LoadingForm.loadingform.Show();
+                        LoadingForm.loadingform.timer2.Start();
+                        Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đăng nhập thất bại, sai tên đăng nhập hoặc mật khẩu!", "Đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Đăng nhập thất bại, sai tên đăng nhập hoặc mật khẩu!", "Đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Chọn chức vụ của bạn!", "Đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (rb_Employee.Checked == true)
+            catch
             {
-                if (AccountDAO.Instance.signIn(tb_Password.Text, tb_Password.Text, "employee"))
-                {
-                    tb_Username.Clear();
-                    tb_Password.Clear();
-                    HomePage.homepage.bt_Income.Enabled = false;
-                    HomePage.homepage.bt_Manager.Enabled = false;
-                    LoadingForm.loadingform.progressBar1.Value = 0;
-                    LoadingForm.loadingform.Show();
-                    LoadingForm.loadingform.timer2.Start();
-                    Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Đăng nhập thất bại, sai tên đăng nhập hoặc mật khẩu!", "Đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Lỗi tải dữ liệu", "Đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                MessageBox.Show("Chọn chức vụ của bạn!", "Đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btSignin_MouseHover(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btSignin_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btSignin_MouseEnter(object sender, EventArgs e)
-        {
-
         }
     }
 }
