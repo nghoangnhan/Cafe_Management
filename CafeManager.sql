@@ -1,4 +1,5 @@
-﻿CREATE DATABASE CafeManager
+﻿DROP DATABASE CafeManager
+CREATE DATABASE CafeManager
 GO
 USE CafeManager
 GO

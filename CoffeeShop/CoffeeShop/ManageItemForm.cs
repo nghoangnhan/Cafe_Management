@@ -81,7 +81,6 @@ namespace CoffeeShop
             try
             {
                 string id = "i" + (item_count + 1).ToString();
-                MessageBox.Show(id.ToString());
                 string name = tb_ItemName.Text;
                 int price = Convert.ToInt32(tb_Price.Text);
 

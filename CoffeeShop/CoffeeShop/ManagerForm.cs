@@ -55,18 +55,28 @@ namespace CoffeeShop
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ManageItemForm eitem = new ManageItemForm();
-            eitem.Show();
+
         }
 
         private void Manage_Toolstrip_Click(object sender, EventArgs e)
         {
-            ManageEmployeeForm mana=new ManageEmployeeForm();
-            mana.Show();
+
         }
         private void Manager_FormClosed(object sender, FormClosedEventArgs e)
         {
             HomePageForm.homepage.Show();
+        }
+
+        private void editItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageItemForm eitem = new ManageItemForm();
+            eitem.Show();
+        }
+
+        private void manageEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageEmployeeForm mana = new ManageEmployeeForm();
+            mana.Show();
         }
     }
 }

@@ -113,12 +113,8 @@ D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug
 D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.CustomerForm.resources
 D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.LoadingForm.resources
 D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.LoginForm.resources
-D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.ManageEmployee.resources
-D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.EditItemForm.resources
 D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.CheckingForm.resources
-D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.HomePage.resources
 D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.IncomeForm.resources
-D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Manager.resources
 D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Properties.Resources.resources
 D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.csproj.GenerateResource.cache
 D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.csproj.CoreCompileInputs.cache
@@ -139,3 +135,7 @@ D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Man
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.ManageItemForm.resources
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.HomePageForm.resources
 D:\HK1 năm 3\IT Project\Cafe_Git\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.ManagerForm.resources
+D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.ManageEmployeeForm.resources
+D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.ManageItemForm.resources
+D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.HomePageForm.resources
+D:\HocKi1_Nam3\ITProject\Project\Cafe_Management\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.ManagerForm.resources
